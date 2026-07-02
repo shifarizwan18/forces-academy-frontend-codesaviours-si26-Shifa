@@ -4,89 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Forces Academy Faisalabad</title>
 
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container">
+    <!-- ================= NAVBAR START ================= -->
 
-        <a class="navbar-brand fw-bold" href="index.html">
-            Forces Academy
-        </a>
+    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="container">
 
-        <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <!-- Logo -->
 
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
-                <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
-                <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
 
-                <li class="nav-item">
-                    <a class="btn btn-warning fw-semibold px-3" href="#">
-                        Student Portal
-                    </a>
-                </li>
+                <img src="images/logo.png" alt="Logo" class="logo">
 
-            </ul>
+                <div class="logo-text ms-2">
+                    <h4>FORCES ACADEMY</h4>
+                    <span>FAISALABAD</span>
+                </div>
+
+            </a>
+
+            <!-- Mobile Toggle -->
+
+            <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu -->
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
+
+                <ul class="navbar-nav align-items-lg-center">
+
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                </ul>
+
+                <!-- Student Portal Button -->
+
+                <a href="#" class="portal-btn">
+                    <i class="bi bi-mortarboard-fill"></i>
+                    Student Portal
+                </a>
+
+            </div>
+
         </div>
 
-    </div>
-</nav>
+    </nav>
 
+    <!-- ================= NAVBAR END ================= -->
 
-<section id="hero">
-    <div class="hero-overlay">
-        <div class="container">
-            <div class="row align-items-center" style="min-height: 80vh;">
+    <!-- ================= HERO SECTION START ================= -->
+    <section id="hero" class="fa2-hero">
 
-                <div class="col-lg-8 text-white">
+        <!-- Full-bleed background photo behind everything -->
+        <div class="fa2-photo"></div>
+        <div class="fa2-photo-fade"></div>
+        <div class="fa2-grid-fx"></div>
 
-                    <h1 class="display-4 fw-bold mb-3">
-                        Forces Academy Faisalabad
-                    </h1>
+        <div class="fa2-hero-inner">
 
-                    <p class="lead mb-4">
-                        Excellence in Education Preparing Tomorrow’s Leaders Today
-                    </p>
+            <div class="fa2-hero-content">
 
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="admissions.html" class="btn btn-warning btn-lg fw-semibold px-4">
-                            Apply Now
-                        </a>
+                <span class="fa2-badge">
+                    <span class="fa2-dot"></span>
+                    Admissions Open &middot; 2026 Intake
+                </span>
 
-                        <a href="about.html" class="btn btn-outline-light btn-lg px-4">
-                            Learn More
-                        </a>
-                    </div>
+                <h1 class="fa2-title">
+                    <span class="fa2-letters">
+                        <span style="animation-delay:.05s">F</span><span style="animation-delay:.10s">O</span><span style="animation-delay:.15s">R</span><span style="animation-delay:.20s">C</span><span style="animation-delay:.25s">E</span><span style="animation-delay:.30s">S</span>
+                    </span>
+                    <span class="fa2-subline">ACADEMY <em>FAISALABAD</em></span>
+                </h1>
 
+                <p class="fa2-tagline">
+                    Excellence in education, preparing tomorrow's leaders through
+                    discipline, character and academic rigor.
+                </p>
+
+                <div class="fa2-buttons">
+                    <a href="admissions.html" class="fa2-btn fa2-btn-fill">
+                        <span>Apply Now</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="about.html" class="fa2-btn fa2-btn-ghost">
+                        <span>Learn More</span>
+                        <i class="bi bi-play-circle"></i>
+                    </a>
                 </div>
 
             </div>
+
         </div>
-    </div>
-</section>
 
-<!-- ================= BOOTSTRAP JS ================= -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Floating clipboard card, overlaid on the photo -->
+        <div class="fa2-clipboard">
+            <div class="fa2-clip"><span></span></div>
 
-<!-- Custom JS -->
-<script src="js/main.js"></script>
+            <div class="fa2-clipboard-head">
+                <h4>Selection Process</h4>
+                <span class="fa2-file-id">SEL-2026</span>
+            </div>
+
+            <ul class="fa2-checklist">
+                <li style="animation-delay:.2s"><span class="fa2-chk"></span>Initial Screening</li>
+                <li style="animation-delay:1.2s"><span class="fa2-chk"></span>Physical &amp; Medical Test</li>
+                <li style="animation-delay:2.2s"><span class="fa2-chk"></span>Interview Panel</li>
+                <li style="animation-delay:3.2s"><span class="fa2-chk"></span>Training Selection</li>
+            </ul>
+
+            <div class="fa2-progress">
+                <div class="fa2-progress-bar"></div>
+            </div>
+            <span class="fa2-progress-label">Processing candidature&hellip;</span>
+
+            <div class="fa2-stamp">SHORTLISTED</div>
+        </div>
+
+        <!-- Scrolling course ticker -->
+        <div class="fa2-ticker">
+            <div class="fa2-ticker-track">
+                <span>ISSB PREPARATION</span>
+                <span>&bull;</span>
+                <span>PMA LONG COURSE COACHING</span>
+                <span>&bull;</span>
+                <span>PHYSICAL &amp; FITNESS TRAINING</span>
+                <span>&bull;</span>
+                <span>ACADEMIC COACHING</span>
+                <span>&bull;</span>
+                <span>INTERVIEW &amp; PSYCH PREP</span>
+                <span>&bull;</span>
+                <span>ISSB PREPARATION</span>
+                <span>&bull;</span>
+                <span>PMA LONG COURSE COACHING</span>
+                <span>&bull;</span>
+                <span>PHYSICAL &amp; FITNESS TRAINING</span>
+                <span>&bull;</span>
+                <span>ACADEMIC COACHING</span>
+                <span>&bull;</span>
+                <span>INTERVIEW &amp; PSYCH PREP</span>
+                <span>&bull;</span>
+            </div>
+        </div>
+
+    </section>
+    <!-- ================= HERO SECTION END ================= -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
