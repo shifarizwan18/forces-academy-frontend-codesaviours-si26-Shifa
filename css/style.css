@@ -617,7 +617,7 @@
 }
 
 /* ==========================================================
-   RESPONSIVE
+   RESPONSIVE — HERO
 ========================================================== */
 
 @media(max-width:991px){
@@ -679,4 +679,260 @@
     .fa2-letters span, .fa2-subline, .fa2-tagline, .fa2-buttons, .fa2-badge{
         opacity:1 !important; transform:none !important;
     }
+}
+
+/* ==========================================================
+   FOOTER — reusable across every page
+========================================================== */
+
+.fa-footer{
+    position:relative;
+    background:var(--forest-dark);
+    color:rgba(245,242,234,.82);
+    padding-top:64px;
+    border-top:2px solid var(--gold);
+    overflow:hidden;
+}
+
+/* Faint dot-grid echo of the hero, kept very quiet back here */
+.fa-footer::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(rgba(255,213,79,.06) 1px, transparent 1px);
+    background-size:26px 26px;
+    pointer-events:none;
+}
+
+.fa-footer .container{
+    position:relative;
+    z-index:1;
+}
+
+.fa-footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:40px;
+}
+
+/* --- Brand column --- */
+.fa-footer-brand{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.fa-footer-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.fa-footer-logo img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+    background:#fff;
+    padding:3px;
+    border:2px solid var(--gold);
+}
+
+.fa-footer-logo h4{
+    font-family:'Oswald',sans-serif;
+    color:var(--cream);
+    font-size:17px;
+    font-weight:600;
+    letter-spacing:1.2px;
+    margin:0;
+}
+
+.fa-footer-logo span{
+    display:block;
+    color:var(--khaki);
+    font-size:10.5px;
+    letter-spacing:2.8px;
+    font-weight:500;
+}
+
+.fa-footer-about{
+    font-size:13px;
+    line-height:1.7;
+    color:rgba(245,242,234,.65);
+    max-width:30rem;
+}
+
+/* --- Heading style shared by all footer columns --- */
+.fa-footer-col h5{
+    font-family:'Oswald',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:20px;
+    padding-bottom:10px;
+    border-bottom:1px dashed rgba(255,213,79,.3);
+}
+
+/* --- Quick links --- */
+.fa-footer-links{ list-style:none; padding:0; margin:0; }
+
+.fa-footer-links li + li{ margin-top:11px; }
+.fa-footer-links li{ margin-top:0; }
+.fa-footer-links li:first-child{ margin-top:0; }
+
+.fa-footer-links a{
+    color:rgba(245,242,234,.75);
+    text-decoration:none;
+    font-size:13.5px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:.25s;
+}
+
+.fa-footer-links a i{
+    font-size:10px;
+    color:var(--gold);
+    transition:transform .25s;
+}
+
+.fa-footer-links a:hover{
+    color:var(--gold);
+    padding-left:4px;
+}
+
+.fa-footer-links a:hover i{
+    transform:translateX(3px);
+}
+
+/* --- Contact info --- */
+.fa-footer-contact{ list-style:none; padding:0; margin:0; }
+
+.fa-footer-contact li{
+    display:flex;
+    align-items:flex-start;
+    gap:11px;
+    font-size:13.5px;
+    color:rgba(245,242,234,.75);
+    line-height:1.5;
+}
+
+.fa-footer-contact li + li{ margin-top:14px; }
+
+.fa-footer-contact i{
+    color:var(--gold);
+    font-size:15px;
+    margin-top:2px;
+    flex-shrink:0;
+}
+
+.fa-footer-contact a{
+    color:inherit;
+    text-decoration:none;
+    transition:.25s;
+}
+
+.fa-footer-contact a:hover{ color:var(--gold); }
+
+/* --- Social icons --- */
+.fa-footer-social-text{
+    font-size:13px;
+    line-height:1.7;
+    color:rgba(245,242,234,.65);
+    margin-bottom:16px;
+}
+
+.fa-footer-social{
+    display:flex;
+    gap:12px;
+    margin-top:4px;
+}
+
+.fa-footer-social a{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1.5px solid rgba(255,213,79,.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold);
+    font-size:15px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.fa-footer-social a:hover{
+    background:var(--gold);
+    color:var(--forest-dark);
+    border-color:var(--gold);
+    transform:translateY(-3px);
+}
+
+/* --- Bottom bar --- */
+.fa-footer-bottom{
+    border-top:1px dashed rgba(255,213,79,.25);
+    padding:20px 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+}
+
+.fa-footer-bottom p{
+    font-size:12.5px;
+    color:rgba(245,242,234,.55);
+    margin:0;
+}
+
+.fa-footer-bottom p strong{
+    color:var(--khaki);
+    font-weight:600;
+}
+
+.fa-footer-legal{
+    display:flex;
+    gap:22px;
+}
+
+.fa-footer-legal a{
+    font-size:12.5px;
+    color:rgba(245,242,234,.55);
+    text-decoration:none;
+    transition:.25s;
+}
+
+.fa-footer-legal a:hover{ color:var(--gold); }
+
+/* --- Responsive --- */
+@media(max-width:991px){
+    .fa-footer-grid{
+        grid-template-columns:1fr 1fr;
+        row-gap:36px;
+    }
+    .fa-footer-brand{ grid-column:1 / -1; }
+}
+
+@media(max-width:575px){
+    .fa-footer{ padding-top:48px; }
+    .fa-footer-grid{
+        grid-template-columns:1fr;
+        gap:32px;
+        text-align:left;
+    }
+    .fa-footer-logo{ justify-content:flex-start; }
+    .fa-footer-about{ max-width:100%; margin:0; }
+    .fa-footer-social-text{ max-width:100%; margin:0 0 16px; }
+    .fa-footer-contact li{ justify-content:flex-start; text-align:left; }
+    .fa-footer-social{ justify-content:flex-start; }
+    .fa-footer-bottom{ flex-direction:column; align-items:flex-start; text-align:left; }
+    .fa-footer-legal{ justify-content:flex-start; }
+}
+
+@media(prefers-reduced-motion: reduce){
+    .fa-footer-links a, .fa-footer-social a{ transition:none !important; }
 }
