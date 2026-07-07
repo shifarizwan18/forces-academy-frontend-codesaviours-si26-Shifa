@@ -738,7 +738,6 @@
     padding:3px;
     border:2px solid var(--gold);
 }
-
 .fa-footer-logo h4{
     font-family:'Oswald',sans-serif;
     color:var(--cream);
@@ -908,7 +907,7 @@
 
 .fa-footer-legal a:hover{ color:var(--gold); }
 
-/* --- Responsive --- */
+
 @media(max-width:991px){
     .fa-footer-grid{
         grid-template-columns:1fr 1fr;
