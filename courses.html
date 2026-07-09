@@ -1,16 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses — Forces Academy Faisalabad</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- ⚠️ Path check: agar yeh page kisi subfolder mein hai to "css/style.css" 
+    <!-- Preload the icon webfont so card/badge icons never render blank on first paint -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/fonts/bootstrap-icons.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- ⚠️ Path check: agar yeh page kisi subfolder mein hai to "css/style.css"
          ki jagah "../css/style.css" karein -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
     <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
         <div class="container">
+
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="images/logo.png" alt="Logo" class="logo">
                 <div class="logo-text ms-2">
@@ -18,11 +28,13 @@
                     <span>FAISALABAD</span>
                 </div>
             </a>
+
             <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
                 <ul class="navbar-nav align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -33,14 +45,648 @@
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
+
                 <a href="#" class="portal-btn">
                     <i class="bi bi-mortarboard-fill"></i>
                     Student Portal
                 </a>
             </div>
+
         </div>
     </nav>
-    <!-- baaki page ka content yahan se shuru -->
+
+    <!-- ================= PAGE HEADING + INTRO ================= -->
+    <header class="crs-hero">
+        <div class="crs-hero-fx"></div>
+        <div class="crs-hero-glyph" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></div>
+
+        <div class="container crs-hero-inner">
+
+            <div class="crs-hero-left">
+                <nav class="crs-breadcrumb" aria-label="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="bi bi-chevron-right"></i>
+                    <span>Courses</span>
+                </nav>
+
+                <span class="ab-eyebrow"><span class="ab-eyebrow-dot"></span>Our Programs</span>
+                <h1>Courses Built Around Your Next Milestone</h1>
+                <p>
+                    From Matriculation to ISSB and PMA entry-test preparation, every course
+                    at Forces Academy Faisalabad is structured around a clear next step —
+                    not just a syllabus. Pick the stage you're at, and we'll take it from there.
+                </p>
+
+                <div class="crs-hero-facts">
+                    <div class="crs-hero-fact">
+                        <strong>9</strong>
+                        <span>Programs</span>
+                    </div>
+                    <div class="crs-hero-fact">
+                        <strong>6 Wks&ndash;2 Yrs</strong>
+                        <span>Duration Range</span>
+                    </div>
+                    <div class="crs-hero-fact">
+                        <strong>Matric &rarr; PMA</strong>
+                        <span>Full Pathway</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crs-hero-right">
+                <div class="crs-track-card" id="crsTrackCard">
+
+                    <div class="crs-track-tabs" role="tablist" aria-label="Program wings">
+                        <button type="button" class="crs-track-tab active" data-index="0" role="tab" aria-selected="true">
+                            <i class="bi bi-mortarboard"></i> Academic
+                        </button>
+                        <button type="button" class="crs-track-tab" data-index="1" role="tab" aria-selected="false">
+                            <i class="bi bi-clipboard2-pulse"></i> Test Prep
+                        </button>
+                        <button type="button" class="crs-track-tab" data-index="2" role="tab" aria-selected="false">
+                            <i class="bi bi-signpost-split"></i> Bridging
+                        </button>
+                    </div>
+
+                    <div class="crs-track-body">
+                        <div class="crs-track-head">
+                            <h4 id="crsTrackTitle">Academic Wing</h4>
+                            <span class="crs-track-count" id="crsTrackCount">01 / 03</span>
+                        </div>
+
+                        <ul class="crs-track-bullets" id="crsTrackBullets"></ul>
+
+                        <div class="crs-track-progress" aria-hidden="true">
+                            <div class="crs-track-progress-bar" id="crsTrackProgressBar"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <!-- ================= PAGE HEADING + INTRO END ================= -->
+
+    <!-- ================= COURSE CARDS GRID ================= -->
+    <section class="ab-section crs-courses">
+        <div class="container">
+
+            <div class="text-center ab-section-head">
+                <span class="ab-tag">9 Programs Available</span>
+                <h2 class="ab-heading">Choose Your Path</h2>
+                <p class="ab-body mx-auto text-center">
+                    Whether you're starting Matric or walking into your ISSB interview
+                    next month, there's a course built for exactly where you stand today.
+                </p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                <!-- 1. FSc Pre-Medical -->
+                <div class="col">
+                    <div class="card crs-card h-100">
+                        <div class="crs-card-top">
+                            <span class="crs-card-badge">Intermediate</span>
+                            <div class="crs-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.8 8.1c0-2.7-2.2-4.8-4.9-4.8-1.8 0-3.4.9-4.3 2.4-.9-1.5-2.5-2.4-4.3-2.4-2.7 0-4.9 2.1-4.9 4.8 0 5.6 9.2 11.4 9.2 11.4s9.2-5.8 9.2-11.4z"/>
+                                    <path d="M3.6 12.4h3.1l1.5-2.9 2 5.6 1.5-2.7h6.7"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body crs-card-body">
+                            <h3 class="crs-card-title">FSc Pre-Medical</h3>
+                            <p class="crs-card-text">
+                                Biology, Chemistry and Physics coursework built for board
+                                exams alongside MDCAT groundwork, so students don't start
+                                from zero after Intermediate.
+                            </p>
+                            <ul class="crs-card-meta">
+                                <li>
+                                    <i class="bi bi-clock-history"></i>
+                                    <span><strong>Duration:</strong> 2 Years (11th &amp; 12th)</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-people"></i>
+                                    <span><strong>For:</strong> Matric Science students aiming for medical college or ISSB</span>
+                                </li>
+                            </ul>
+                            <a href="admissions.html#fee-fsc-medical" class="crs-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. FSc Pre-Engineering -->
+                <div class="col">
+                    <div class="card crs-card h-100">
+                        <div class="crs-card-top">
+                            <span class="crs-card-badge">Intermediate</span>
+                            <div class="crs-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="3.3"/>
+                                    <path d="M12 2.6v2.8M12 18.6v2.8M4.3 7.3l2.4 1.4M17.3 15.3l2.4 1.4M2.6 12h2.8M18.6 12h2.8M4.3 16.7l2.4-1.4M17.3 8.7l2.4-1.4M7.3 4.3L8.7 6.7M15.3 17.3l1.4 2.4"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body crs-card-body">
+                            <h3 class="crs-card-title">FSc Pre-Engineering</h3>
+                            <p class="crs-card-text">
+                                Mathematics, Physics and Chemistry taught with an
+                                engineering-entry-test mindset, preparing students for
+                                ECAT and PMA academics at the same time.
+                            </p>
+                            <ul class="crs-card-meta">
+                                <li>
+                                    <i class="bi bi-clock-history"></i>
+                                    <span><strong>Duration:</strong> 2 Years (11th &amp; 12th)</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-people"></i>
+                                    <span><strong>For:</strong> Matric Science students aiming for engineering university or PMA</span>
+                                </li>
+                            </ul>
+                            <a href="admissions.html#fee-fsc-engineering" class="crs-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. ICS (Computer Science) -->
+                <div class="col">
+                    <div class="card crs-card h-100">
+                        <div class="crs-card-top">
+                            <span class="crs-card-badge">Intermediate</span>
+                            <div class="crs-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="4" y="5" width="16" height="10" rx="1.2"/>
+                                    <path d="M2 19h20M9.5 15v2M14.5 15v2"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body crs-card-body">
+                            <h3 class="crs-card-title">ICS (Computer Science)</h3>
+                            <p class="crs-card-text">
+                                Computer Science, Mathematics and Physics with hands-on
+                                programming labs, for students who want a
+                                technology-focused Intermediate.
+                            </p>
+                            <ul class="crs-card-meta">
+                                <li>
+                                    <i class="bi bi-clock-history"></i>
+                                    <span><strong>Duration:</strong> 2 Years (11th &amp; 12th)</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-people"></i>
+                                    <span><strong>For:</strong> Matric students interested in software, IT or technical Forces branches</span>
+                                </li>
+                            </ul>
+                            <a href="admissions.html#fee-ics" class="crs-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Matric Science -->
+                <div class="col">
+                    <div class="card crs-card h-100">
+                        <div class="crs-card-top">
+                            <span class="crs-card-badge">Matriculation</span>
+                            <div class="crs-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9.5 2.8h5M10.3 2.8v6L5 18.4a1.7 1.7 0 0 0 1.5 2.5h11a1.7 1.7 0 0 0 1.5-2.5L13.7 8.8v-6"/>
+                                    <path d="M7.6 15.2h8.8"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body crs-card-body">
+                            <h3 class="crs-card-title">Matric Science</h3>
+                            <p class="crs-card-text">
+                                A structured 9th &amp; 10th grade science program covering
+                                Physics, Chemistry, Biology and Mathematics — the
+                                foundation every FSc course depends on.
+                            </p>
+                            <ul class="crs-card-meta">
+                                <li>
+                                    <i class="bi bi-clock-history"></i>
+                                    <span><strong>Duration:</strong> 2 Years (9th &amp; 10th)</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-people"></i>
+                                    <span><strong>For:</strong> Students who've completed Class 8 and want a strong science base</span>
+                                </li>
+                            </ul>
+                            <a href="admissions.html#fee-matric-science" class="crs-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Matric Arts / Humanities -->
+                <div class="col">
+                    <div class="card crs-card h-100">
+                        <div class="crs-card-top">
+                            <span class="crs-card-badge">Matriculation</span>
+                            <div class="crs-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="4" y="3" width="16" height="18" rx="1.4"/>
+                                    <path d="M9.2 3v7.2l2.3-1.8 2.3 1.8V3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body crs-card-body">
+                            <h3 class="crs-card-title">Matric Arts / Humanities</h3>
+                            <p class="crs-card-text">
+                                Pakistan Studies, Islamiat, Civics and Economics taught
+                                with the same discipline as the science wing, for students
+                                choosing the humanities stream.
+                            </p>
+                            <ul class="crs-card-meta">
+                                <li>
+                                    <i class="bi bi-clock-history"></i>
+                                    <span><strong>Duration:</strong> 2 Years (9th &amp; 10th)</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-people"></i>
+                                    <span><strong>For:</strong> Students who've completed Class 8 and prefer arts / humanities</span>
+                                </li>
+                            </ul>
+                            <a href="admissions.html#fee-matric-arts" class="crs-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. ISSB Preparation Course -->
+                <div class="col">
+                    <div class="card crs-card h-100">
+                        <div class="crs-card-top">
+                            <span class="crs-card-badge">Test Preparation</span>
+                            <div class="crs-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="5" y="4" width="14" height="17" rx="1.4"/>
+                                    <rect x="9" y="2.3" width="6" height="3" rx="0.8"/>
+                                    <path d="M9 13.2l2.1 2.1L15.5 11"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body crs-card-body">
+                            <h3 class="crs-card-title">ISSB Preparation Course</h3>
+                            <p class="crs-card-text">
+                                Intensive coaching for the two-stage ISSB process —
+                                psychological tests, group tasks, planning exercises and
+                                the personal interview — run by experienced instructors.
+                            </p>
+                            <ul class="crs-card-meta">
+                                <li>
+                                    <i class="bi bi-clock-history"></i>
+                                    <span><strong>Duration:</strong> 6–8 Weeks (Intensive)</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-people"></i>
+                                    <span><strong>For:</strong> Candidates who already hold or expect an ISSB call letter</span>
+                                </li>
+                            </ul>
+                            <a href="admissions.html#fee-issb" class="crs-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. PMA Long Course Entry Test Prep -->
+                <div class="col">
+                    <div class="card crs-card h-100">
+                        <div class="crs-card-top">
+                            <span class="crs-card-badge">Test Preparation</span>
+                            <div class="crs-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 21V3"/>
+                                    <path d="M6 4.6c2-1.3 4-1.3 6 0s4 1.3 6 0v9.2c-2 1.3-4 1.3-6 0s-4-1.3-6 0"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body crs-card-body">
+                            <h3 class="crs-card-title">PMA Long Course Entry Test Prep</h3>
+                            <p class="crs-card-text">
+                                Academic test prep, physical conditioning and interview
+                                practice built specifically around the Pakistan Military
+                                Academy Kakul entry requirements.
+                            </p>
+                            <ul class="crs-card-meta">
+                                <li>
+                                    <i class="bi bi-clock-history"></i>
+                                    <span><strong>Duration:</strong> 4 Months</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-people"></i>
+                                    <span><strong>For:</strong> Male candidates targeting the PMA Long Course</span>
+                                </li>
+                            </ul>
+                            <a href="admissions.html#fee-pma" class="crs-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Entry Test Preparation (MDCAT / ECAT) -->
+                <div class="col">
+                    <div class="card crs-card h-100">
+                        <div class="crs-card-top">
+                            <span class="crs-card-badge">Test Preparation</span>
+                            <div class="crs-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="5" y="4" width="14" height="17" rx="1.4"/>
+                                    <rect x="9" y="2.3" width="6" height="3" rx="0.8"/>
+                                    <path d="M9 17v-3.2M12 17v-6.2M15 17v-4.6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body crs-card-body">
+                            <h3 class="crs-card-title">Entry Test Preparation (MDCAT / ECAT)</h3>
+                            <p class="crs-card-text">
+                                Subject-wise MCQ practice, timed mock tests and weak-area
+                                analysis for the national medical and engineering entry
+                                tests.
+                            </p>
+                            <ul class="crs-card-meta">
+                                <li>
+                                    <i class="bi bi-clock-history"></i>
+                                    <span><strong>Duration:</strong> 6 Months</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-people"></i>
+                                    <span><strong>For:</strong> FSc Pre-Medical / Pre-Engineering graduates</span>
+                                </li>
+                            </ul>
+                            <a href="admissions.html#fee-entry-test" class="crs-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. O/A Level Bridging Program -->
+                <div class="col">
+                    <div class="card crs-card h-100">
+                        <div class="crs-card-top">
+                            <span class="crs-card-badge">Bridging Program</span>
+                            <div class="crs-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 8h14M13.2 4.2l3.8 3.8-3.8 3.8"/>
+                                    <path d="M21 16H7M10.8 12.2l-3.8 3.8 3.8 3.8"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-body crs-card-body">
+                            <h3 class="crs-card-title">O/A Level Bridging Program</h3>
+                            <p class="crs-card-text">
+                                Converts Cambridge O/A Level coursework into the local
+                                FSc/Matric syllabus and ISSB-style testing format, so no
+                                student falls behind on entry tests.
+                            </p>
+                            <ul class="crs-card-meta">
+                                <li>
+                                    <i class="bi bi-clock-history"></i>
+                                    <span><strong>Duration:</strong> Flexible (3–6 Months)</span>
+                                </li>
+                                <li>
+                                    <i class="bi bi-people"></i>
+                                    <span><strong>For:</strong> O/A Level students moving into local-curriculum entry tests</span>
+                                </li>
+                            </ul>
+                            <a href="admissions.html#fee-oa-bridging" class="crs-btn">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ================= COURSE CARDS GRID END ================= -->
+
+    <!-- ================= CTA BAND ================= -->
+    <section class="ab-section crs-cta">
+        <div class="ab-mv-fx"></div>
+        <div class="container text-center crs-cta-inner">
+            <span class="ab-tag ab-tag-light">Need Guidance?</span>
+            <h2 class="ab-heading ab-heading-light">Not Sure Which Course Fits You?</h2>
+            <p>
+                Our counsellors review your current class, target career (Army, Navy or
+                Air Force) and available time before recommending a course — no
+                guesswork, just a clear next step.
+            </p>
+            <a href="contact.html" class="crs-btn crs-btn-lg">Talk to an Advisor <i class="bi bi-arrow-right"></i></a>
+        </div>
+    </section>
+    <!-- ================= CTA BAND END ================= -->
+
+    <!-- ================= FOOTER START ================= -->
+    <footer class="fa-footer">
+
+        <div class="container">
+
+            <div class="fa-footer-grid">
+
+                <!-- Brand -->
+                <div class="fa-footer-brand">
+
+                    <div class="fa-footer-logo">
+                        <img src="images/logo.png" alt="Forces Academy Faisalabad logo">
+                        <div>
+                            <h4>FORCES ACADEMY</h4>
+                            <span>FAISALABAD</span>
+                        </div>
+                    </div>
+
+                    <p class="fa-footer-about">
+                        Preparing tomorrow's leaders through discipline, character and
+                        academic rigor &mdash; dedicated coaching for ISSB, PMA Long Course
+                        and every step of the selection process.
+                    </p>
+
+                </div>
+
+                <!-- Quick Links -->
+                <div class="fa-footer-col">
+                    <h5>Quick Links</h5>
+                    <ul class="fa-footer-links">
+                        <li><a href="index.html"><i class="bi bi-caret-right-fill"></i>Home</a></li>
+                        <li><a href="about.html"><i class="bi bi-caret-right-fill"></i>About</a></li>
+                        <li><a href="courses.html"><i class="bi bi-caret-right-fill"></i>Courses</a></li>
+                        <li><a href="admissions.html"><i class="bi bi-caret-right-fill"></i>Admissions</a></li>
+                        <li><a href="results.html"><i class="bi bi-caret-right-fill"></i>Results</a></li>
+                        <li><a href="gallery.html"><i class="bi bi-caret-right-fill"></i>Gallery</a></li>
+                        <li><a href="contact.html"><i class="bi bi-caret-right-fill"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="fa-footer-col">
+                    <h5>Contact Us</h5>
+                    <ul class="fa-footer-contact">
+                        <li>
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Faisal Town Canal Road Faisalabad</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone-fill"></i>
+                            <a href="tel:+923156954383">0315-6954383</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope-fill"></i>
+                            <a href="mailto:info@forcesacademyfsd.edu.pk">info@forcesacademyfsd.edu.pk</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-clock-fill"></i>
+                            <span>Mon &ndash; Sat: 8:00 AM &ndash; 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Get in Touch (social) -->
+                <div class="fa-footer-col">
+                    <h5>Get in Touch</h5>
+                    <p class="fa-footer-social-text">Follow us for ISSB tips, batch updates and results.</p>
+                    <div class="fa-footer-social">
+                        <a href="https://www.facebook.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="fa-footer-bottom">
+                <p>&copy; 2026 <strong>Forces Academy Faisalabad</strong>. All rights reserved.</p>
+                <div class="fa-footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- ================= FOOTER END ================= -->
+
     <!-- Bootstrap JS — is script ke bina toggle/collapse kaam nahi karega -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Program Track panel — self-driving tabs with staggered bullet entrance -->
+    <script>
+    (function () {
+        var tracks = [
+            {
+                title: "Academic Wing",
+                count: "01 / 03",
+                bullets: [
+                    "Matric Science &amp; Arts (9th &amp; 10th)",
+                    "FSc Pre-Medical &amp; Pre-Engineering",
+                    "ICS with hands-on programming labs",
+                    "5 Programs &middot; Matric to FSc &amp; ICS"
+                ]
+            },
+            {
+                title: "Test Prep Wing",
+                count: "02 / 03",
+                bullets: [
+                    "ISSB Preparation (6–8 weeks intensive)",
+                    "PMA Long Course Entry Test Prep (4 months)",
+                    "MDCAT / ECAT Entry Test Prep (6 months)",
+                    "3 Programs &middot; ISSB, PMA &amp; Entry Tests"
+                ]
+            },
+            {
+                title: "Bridging Wing",
+                count: "03 / 03",
+                bullets: [
+                    "O/A Level to Local Curriculum conversion",
+                    "Flexible duration: 3–6 months",
+                    "ISSB-style testing format included",
+                    "1 Program &middot; No student left behind"
+                ]
+            }
+        ];
+
+        var card = document.getElementById("crsTrackCard");
+        if (!card) return;
+
+        var tabs = card.querySelectorAll(".crs-track-tab");
+        var titleEl = document.getElementById("crsTrackTitle");
+        var countEl = document.getElementById("crsTrackCount");
+        var bulletsEl = document.getElementById("crsTrackBullets");
+        var progressBar = document.getElementById("crsTrackProgressBar");
+
+        var current = 0;
+        var autoTimer = null;
+        var AUTO_MS = 4500;
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function renderTrack(index) {
+            var t = tracks[index];
+            titleEl.textContent = t.title;
+            countEl.textContent = t.count;
+
+            bulletsEl.innerHTML = "";
+            t.bullets.forEach(function (text, i) {
+                var li = document.createElement("li");
+                li.style.setProperty("--d", i);
+                li.innerHTML = '<i class="bi bi-check2-circle"></i> ' + text;
+                bulletsEl.appendChild(li);
+            });
+
+            // Restart the staggered entrance animation on every switch
+            bulletsEl.classList.remove("is-in");
+            void bulletsEl.offsetWidth; // force reflow
+            bulletsEl.classList.add("is-in");
+
+            tabs.forEach(function (tab, i) {
+                var active = i === index;
+                tab.classList.toggle("active", active);
+                tab.setAttribute("aria-selected", active ? "true" : "false");
+            });
+
+            current = index;
+        }
+
+        function startProgress() {
+            if (reduceMotion) return;
+            progressBar.style.transition = "none";
+            progressBar.style.width = "0%";
+            void progressBar.offsetWidth;
+            progressBar.style.transition = "width " + AUTO_MS + "ms linear";
+            progressBar.style.width = "100%";
+        }
+
+        function goTo(index) {
+            renderTrack(index);
+            startProgress();
+        }
+
+        function next() {
+            goTo((current + 1) % tracks.length);
+        }
+
+        function startAuto() {
+            clearInterval(autoTimer);
+            if (reduceMotion) return;
+            autoTimer = setInterval(next, AUTO_MS);
+        }
+
+        function stopAuto() {
+            clearInterval(autoTimer);
+            progressBar.style.transition = "none";
+        }
+
+        tabs.forEach(function (tab) {
+            tab.addEventListener("click", function () {
+                goTo(parseInt(tab.dataset.index, 10));
+                startAuto();
+            });
+        });
+
+        card.addEventListener("mouseenter", stopAuto);
+        card.addEventListener("mouseleave", startAuto);
+        card.addEventListener("focusin", stopAuto);
+        card.addEventListener("focusout", startAuto);
+
+        goTo(0);
+        startAuto();
+    })();
+    </script>
+
 </body>
+
+</html>
