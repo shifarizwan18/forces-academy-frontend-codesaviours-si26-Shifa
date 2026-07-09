@@ -1,15 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admissions — Forces Academy Faisalabad</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+
+    <!-- ⚠️ Path check: agar yeh page kisi subfolder mein hai to "css/style.css"
+         ki jagah "../css/style.css" karein -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Admissions page ka apna CSS — style.css ke baad load karein -->
+    <link rel="stylesheet" href="css/admissions.css">
+
+    <!-- Deep-link se aane par target fee row ko highlight karne ke liye -->
+    <style>
+        .ad-fee-table tbody tr{ scroll-margin-top: 130px; }
+        .ad-fee-table tbody tr:target{
+            animation: feeRowHighlight 2.4s ease;
+        }
+        @keyframes feeRowHighlight{
+            0%   { background: rgba(255,213,79,.55); }
+            100% { background: transparent; }
+        }
+    </style>
 </head>
+
 <body>
+
     <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
         <div class="container">
+
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="images/logo.png" alt="Logo" class="logo">
                 <div class="logo-text ms-2">
@@ -17,11 +40,13 @@
                     <span>FAISALABAD</span>
                 </div>
             </a>
+
             <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
                 <ul class="navbar-nav align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -32,14 +57,492 @@
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
+
                 <a href="#" class="portal-btn">
                     <i class="bi bi-mortarboard-fill"></i>
                     Student Portal
                 </a>
             </div>
+
         </div>
     </nav>
-    <!-- baaki page ka content yahan se shuru -->
-    <!-- Bootstrap JS — is script ke bina toggle/collapse kaam nahi karega -->
+
+    <!-- ================= HERO BANNER START ================= -->
+    <header class="ad-hero">
+        <div class="ad-hero-photo"></div>
+        <div class="ad-hero-fade"></div>
+        <div class="ad-hero-fx"></div>
+
+        <div class="container ad-hero-inner">
+            <span class="ad-eyebrow hero-in hero-in-1"><span class="ad-eyebrow-dot"></span>Admissions Open — Batch 2026</span>
+            <h1 class="hero-in hero-in-2">Your Path To The<br>Forces Starts Here.</h1>
+            <p class="hero-in hero-in-3">
+                Follow five simple steps to join Forces Academy Faisalabad and begin
+                your structured preparation for ISSB &amp; PMA Long Course.
+            </p>
+
+            <div class="ad-badges">
+                <div class="ad-badge hero-in hero-in-4">
+                    <i class="bi bi-calendar-event-fill"></i>
+                    <div>
+                        <strong>Last Date To Apply</strong>
+                        <span>31st August 2026</span>
+                    </div>
+                </div>
+                <div class="ad-badge hero-in hero-in-5">
+                    <i class="bi bi-people-fill"></i>
+                    <div>
+                        <strong>Limited Seats</strong>
+                        <span>40 Per Batch</span>
+                    </div>
+                </div>
+                <div class="ad-badge hero-in hero-in-6">
+                    <i class="bi bi-calendar2-check-fill"></i>
+                    <div>
+                        <strong>New Batch Starts</strong>
+                        <span>1st September 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#adSteps" class="ad-scroll-cue hero-in hero-in-7" aria-label="Scroll to content">
+            <span></span>
+            <i class="bi bi-chevron-down"></i>
+        </a>
+    </header>
+    <!-- ================= HERO BANNER END ================= -->
+
+    <!-- ================= SECTION 1: HOW TO APPLY START ================= -->
+    <section class="ad-section" id="adSteps">
+        <div class="container">
+            <div class="text-center ad-section-head">
+                <span class="ad-tag">Getting Started</span>
+                <h2 class="ad-heading">How To Apply</h2>
+                <p class="ad-section-sub">Five steps from application to orientation day.</p>
+            </div>
+
+            <ol class="list-group ad-steps-list">
+
+                <li class="list-group-item ad-step-item reveal">
+                    <div class="ad-step-num">01</div>
+                    <div class="ad-step-body">
+                        <h5>Fill The Application Form</h5>
+                        <p>Collect the form from our Canal Road campus or download it
+                            from the Student Portal, and fill in your personal and
+                            academic details.</p>
+                    </div>
+                    <i class="bi bi-file-earmark-text ad-step-icon"></i>
+                </li>
+
+                <li class="list-group-item ad-step-item reveal">
+                    <div class="ad-step-num">02</div>
+                    <div class="ad-step-body">
+                        <h5>Submit Documents For Verification</h5>
+                        <p>Bring the required documents listed below to our admissions
+                            desk, where our team will verify and register your
+                            application.</p>
+                    </div>
+                    <i class="bi bi-clipboard2-check ad-step-icon"></i>
+                </li>
+
+                <li class="list-group-item ad-step-item reveal">
+                    <div class="ad-step-num">03</div>
+                    <div class="ad-step-body">
+                        <h5>Attend The Entry Assessment</h5>
+                        <p>Sit for a short screening interview and academic assessment
+                            so we can place you in the right batch and course.</p>
+                    </div>
+                    <i class="bi bi-person-check ad-step-icon"></i>
+                </li>
+
+                <li class="list-group-item ad-step-item reveal">
+                    <div class="ad-step-num">04</div>
+                    <div class="ad-step-body">
+                        <h5>Pay The Admission Fee</h5>
+                        <p>Deposit the registration and first month's fee according to
+                            the fee structure to confirm your seat.</p>
+                    </div>
+                    <i class="bi bi-cash-coin ad-step-icon"></i>
+                </li>
+
+                <li class="list-group-item ad-step-item reveal">
+                    <div class="ad-step-num">05</div>
+                    <div class="ad-step-body">
+                        <h5>Receive Confirmation &amp; Attend Orientation</h5>
+                        <p>Get your admission confirmation and welcome pack, then join
+                            the orientation day to meet your instructors and batch.</p>
+                    </div>
+                    <i class="bi bi-flag ad-step-icon"></i>
+                </li>
+
+            </ol>
+        </div>
+    </section>
+    <!-- ================= SECTION 1: HOW TO APPLY END ================= -->
+
+    <!-- ================= SECTION 2: ELIGIBILITY START ================= -->
+    <section class="ad-section ad-eligibility">
+        <div class="ad-eligibility-fx"></div>
+        <div class="container">
+            <div class="text-center ad-section-head">
+                <span class="ad-tag ad-tag-light">Who Can Apply</span>
+                <h2 class="ad-heading ad-heading-light">Eligibility Criteria</h2>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="ad-elig-card reveal">
+                        <div class="ad-elig-icon"><i class="bi bi-shield-check"></i></div>
+                        <h5>ISSB Preparation</h5>
+                        <ul>
+                            <li>Already have an ISSB call letter, or plan to apply soon</li>
+                            <li>Minimum qualification: Intermediate (FSc / ICS / A-Level)</li>
+                            <li>Physically and mentally fit for training</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="ad-elig-card reveal">
+                        <div class="ad-elig-icon"><i class="bi bi-mortarboard-fill"></i></div>
+                        <h5>PMA Long Course Prep</h5>
+                        <ul>
+                            <li>Age between 17 and 22 years on course start date</li>
+                            <li>Unmarried male candidates, FSc / ICS / A-Level pass</li>
+                            <li>Meets Army height &amp; medical requirements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="ad-elig-card reveal">
+                        <div class="ad-elig-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+                        <h5>Short &amp; Crash Courses</h5>
+                        <ul>
+                            <li>Open to any serious aspirant, no test call letter required</li>
+                            <li>Matric or above, any recognized board</li>
+                            <li>Ideal for early or last-minute preparation</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="ad-elig-note">
+                <i class="bi bi-info-circle-fill"></i>
+                Exact criteria can vary slightly by intake. Visit the campus or call
+                our admissions desk to confirm eligibility for your specific case.
+            </p>
+        </div>
+    </section>
+    <!-- ================= SECTION 2: ELIGIBILITY END ================= -->
+
+    <!-- ================= SECTION 3: REQUIRED DOCUMENTS START ================= -->
+    <section class="ad-section">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+
+                <div class="col-lg-5">
+                    <span class="ad-tag">Before You Visit</span>
+                    <h2 class="ad-heading">Required Documents</h2>
+                    <p class="ad-body">
+                        Keep the following documents ready — original and one
+                        photocopy each — to make your admissions desk visit quick and
+                        smooth.
+                    </p>
+                    <p class="ad-body ad-body-muted">
+                        Missing a document? Bring what you have and our admissions
+                        team will guide you on the rest.
+                    </p>
+                </div>
+
+                <div class="col-lg-7">
+                    <ul class="list-group ad-doc-list">
+                        <li class="list-group-item reveal">
+                            <i class="bi bi-check-circle-fill"></i>
+                            CNIC (or B-Form for under 18) — original and copy
+                        </li>
+                        <li class="list-group-item reveal">
+                            <i class="bi bi-check-circle-fill"></i>
+                            4 recent passport-size photographs
+                        </li>
+                        <li class="list-group-item reveal">
+                            <i class="bi bi-check-circle-fill"></i>
+                            Educational certificates and mark sheets (Matric / FSc /
+                            equivalent)
+                        </li>
+                        <li class="list-group-item reveal">
+                            <i class="bi bi-check-circle-fill"></i>
+                            Domicile certificate
+                        </li>
+                        <li class="list-group-item reveal">
+                            <i class="bi bi-check-circle-fill"></i>
+                            School / college leaving or character certificate
+                        </li>
+                        <li class="list-group-item reveal">
+                            <i class="bi bi-check-circle-fill"></i>
+                            Medical fitness certificate (for PMA Long Course
+                            candidates)
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ================= SECTION 3: REQUIRED DOCUMENTS END ================= -->
+
+    <!-- ================= SECTION 4: FEE STRUCTURE START ================= -->
+    <section class="ad-section ad-fees">
+        <div class="container">
+            <div class="text-center ad-section-head">
+                <span class="ad-tag">Investing In Your Future</span>
+                <h2 class="ad-heading">Fee Structure</h2>
+                <p class="ad-section-sub">Transparent, one-time and monthly fees — no
+                    hidden charges.</p>
+            </div>
+
+            <div class="ad-fee-table-wrap reveal">
+                <table class="table ad-fee-table">
+                    <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Duration</th>
+                            <th>Registration Fee</th>
+                            <th>Monthly / Course Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="fee-fsc-medical">
+                            <td>FSc Pre-Medical</td>
+                            <td>2 Years (11th &amp; 12th)</td>
+                            <td>Rs. 5,000</td>
+                            <td>Rs. 8,000 / Month</td>
+                        </tr>
+                        <tr id="fee-fsc-engineering">
+                            <td>FSc Pre-Engineering</td>
+                            <td>2 Years (11th &amp; 12th)</td>
+                            <td>Rs. 5,000</td>
+                            <td>Rs. 8,000 / Month</td>
+                        </tr>
+                        <tr id="fee-ics">
+                            <td>ICS (Computer Science)</td>
+                            <td>2 Years (11th &amp; 12th)</td>
+                            <td>Rs. 5,000</td>
+                            <td>Rs. 8,500 / Month</td>
+                        </tr>
+                        <tr id="fee-matric-science">
+                            <td>Matric Science</td>
+                            <td>2 Years (9th &amp; 10th)</td>
+                            <td>Rs. 4,000</td>
+                            <td>Rs. 6,000 / Month</td>
+                        </tr>
+                        <tr id="fee-matric-arts">
+                            <td>Matric Arts / Humanities</td>
+                            <td>2 Years (9th &amp; 10th)</td>
+                            <td>Rs. 4,000</td>
+                            <td>Rs. 5,500 / Month</td>
+                        </tr>
+                        <tr id="fee-issb">
+                            <td>ISSB Preparation</td>
+                            <td>6–8 Weeks (Intensive)</td>
+                            <td>Rs. 3,000</td>
+                            <td>Rs. 20,000 (Full Course)</td>
+                        </tr>
+                        <tr id="fee-pma">
+                            <td>PMA Long Course Entry Test Prep</td>
+                            <td>4 Months</td>
+                            <td>Rs. 5,000</td>
+                            <td>Rs. 12,000 / Month</td>
+                        </tr>
+                        <tr id="fee-entry-test">
+                            <td>Entry Test Prep (MDCAT / ECAT)</td>
+                            <td>6 Months</td>
+                            <td>Rs. 4,000</td>
+                            <td>Rs. 9,000 / Month</td>
+                        </tr>
+                        <tr id="fee-oa-bridging">
+                            <td>O/A Level Bridging Program</td>
+                            <td>Flexible (3–6 Months)</td>
+                            <td>Rs. 4,000</td>
+                            <td>Rs. 10,000 / Month</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="ad-fee-note">
+                <i class="bi bi-info-circle-fill"></i>
+                Fees shown above are indicative and may be revised for each intake.
+                Sibling and merit-based discounts are available — ask our admissions
+                desk for confirmed, up-to-date figures.
+            </p>
+        </div>
+    </section>
+    <!-- ================= SECTION 4: FEE STRUCTURE END ================= -->
+
+    <!-- ================= SECTION 5: APPLY NOW CTA START ================= -->
+    <section class="ad-cta">
+        <div class="ad-cta-fx"></div>
+        <div class="container">
+            <div class="ad-cta-inner reveal">
+                <div class="ad-cta-text">
+                    <span class="ad-tag ad-tag-light">Seats Are Limited</span>
+                    <h2>Ready To Begin Your Journey?</h2>
+                    <p>Apply today and take the first disciplined step toward the
+                        Armed Forces. Our admissions team is ready to guide you
+                        through every stage.</p>
+                </div>
+                <div class="ad-cta-actions">
+                    <a href="contact.html" class="ad-cta-btn">
+                        <i class="bi bi-send-fill"></i>
+                        Apply Now
+                    </a>
+                    <a href="tel:+923156954383" class="ad-cta-btn ad-cta-btn-outline">
+                        <i class="bi bi-telephone-fill"></i>
+                        0315-6954383
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ================= SECTION 5: APPLY NOW CTA END ================= -->
+
+    <!-- ================= FOOTER START ================= -->
+    <footer class="fa-footer">
+
+        <div class="container">
+
+            <div class="fa-footer-grid">
+
+                <!-- Brand -->
+                <div class="fa-footer-brand">
+
+                    <div class="fa-footer-logo">
+                        <img src="images/logo.png" alt="Forces Academy Faisalabad logo">
+                        <div>
+                            <h4>FORCES ACADEMY</h4>
+                            <span>FAISALABAD</span>
+                        </div>
+                    </div>
+
+                    <p class="fa-footer-about">
+                        Preparing tomorrow's leaders through discipline, character and
+                        academic rigor &mdash; dedicated coaching for ISSB, PMA Long Course
+                        and every step of the selection process.
+                    </p>
+
+                </div>
+
+                <!-- Quick Links -->
+                <div class="fa-footer-col">
+                    <h5>Quick Links</h5>
+                    <ul class="fa-footer-links">
+                        <li><a href="index.html"><i class="bi bi-caret-right-fill"></i>Home</a></li>
+                        <li><a href="about.html"><i class="bi bi-caret-right-fill"></i>About</a></li>
+                        <li><a href="courses.html"><i class="bi bi-caret-right-fill"></i>Courses</a></li>
+                        <li><a href="admissions.html"><i class="bi bi-caret-right-fill"></i>Admissions</a></li>
+                        <li><a href="results.html"><i class="bi bi-caret-right-fill"></i>Results</a></li>
+                        <li><a href="gallery.html"><i class="bi bi-caret-right-fill"></i>Gallery</a></li>
+                        <li><a href="contact.html"><i class="bi bi-caret-right-fill"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="fa-footer-col">
+                    <h5>Contact Us</h5>
+                    <ul class="fa-footer-contact">
+                        <li>
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Faisal Town Canal Road Faisalabad</span>
+                        </li>
+                        <li>
+                            <i class="bi bi-telephone-fill"></i>
+                            <a href="tel:+923156954383">0315-6954383</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-envelope-fill"></i>
+                            <a href="mailto:info@forcesacademyfsd.edu.pk">info@forcesacademyfsd.edu.pk</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-clock-fill"></i>
+                            <span>Mon &ndash; Sat: 8:00 AM &ndash; 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Get in Touch (social) -->
+                <div class="fa-footer-col">
+                    <h5>Get in Touch</h5>
+                    <p class="fa-footer-social-text">Follow us for ISSB tips, batch updates and results.</p>
+                    <div class="fa-footer-social">
+                        <a href="https://www.facebook.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="fa-footer-bottom">
+                <p>&copy; 2026 <strong>Forces Academy Faisalabad</strong>. All rights reserved.</p>
+                <div class="fa-footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- ================= FOOTER END ================= -->
+
+    <!-- Bootstrap JS — is script ke bina toggle/collapse/carousel kaam nahi karega -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scroll-reveal: .reveal elements ahista ahista fade/slide in hote hain jab
+         woh viewport mein aate hain. Reduced-motion users ke liye CSS khud handle
+         karta hai (dekhein admissions.css @media prefers-reduced-motion). -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var revealEls = document.querySelectorAll('.reveal');
+
+            if (!('IntersectionObserver' in window)) {
+                revealEls.forEach(function (el) { el.classList.add('in-view'); });
+                return;
+            }
+
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+            revealEls.forEach(function (el) { io.observe(el); });
+
+            // Hero entrance animations run once, then hand control of
+            // opacity/transform back to normal CSS so hover states
+            // (e.g. the badge lift) work correctly afterwards.
+            var heroEls = document.querySelectorAll('.hero-in');
+            heroEls.forEach(function (el) {
+                el.addEventListener('animationend', function (e) {
+                    if (e.animationName === 'heroFadeUp') {
+                        el.style.opacity = '1';
+                        el.style.transform = 'none';
+                        el.style.animation = el.classList.contains('ad-scroll-cue')
+                            ? 'cueBounce 2s ease-in-out .3s infinite'
+                            : 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
+
+</html>
