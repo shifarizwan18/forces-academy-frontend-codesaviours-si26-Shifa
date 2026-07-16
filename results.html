@@ -11,7 +11,8 @@
 
     <!-- ⚠️ Path check: agar yeh page kisi subfolder mein hai to "css/style.css"
          ki jagah "../css/style.css" karein -->
-    <link rel="stylesheet" href="css/style.css">
+         <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/results.css">
 </head>
 
 <body>
@@ -52,10 +53,314 @@
 
         </div>
     </nav>
-    
+
+    <main class="rs-main">
+
+        <!-- ================= HERO — MERIT BOARD ================= -->
+        <section class="rs-hero">
+            <div class="rs-hero-bg">
+                <div class="rs-hero-pattern"></div>
+                <div class="rs-hero-spotlight"></div>
+            </div>
+
+            <div class="container">
+                <div class="rs-hero-inner rs-reveal">
+
+                    <div class="rs-hero-copy">
+                        <span class="rs-eyebrow">
+                            <span class="rs-eyebrow-dot"></span>
+                            OFFICIAL RECORD · FORCES ACADEMY FAISALABAD
+                        </span>
+
+                        <h1>Every Roll Number Tells <span>a Result.</span></h1>
+
+                        <p>
+                            Term results, merit lists and ISSB assessment scores — declared
+                            here first, straight from the academic office. Find your roll
+                            number below, check your grade, and know exactly where you stand.
+                        </p>
+
+                        <div class="rs-hero-actions">
+                            <a href="#rs-filter" class="rs-cta">
+                                Check My Result <i class="bi bi-arrow-down-short"></i>
+                            </a>
+                            <a href="contact.html" class="rs-cta rs-cta-ghost">
+                                Ask Admin <i class="bi bi-headset"></i>
+                            </a>
+                        </div>
+
+                        <div class="rs-hero-stats">
+                            <div class="rs-stat">
+                                <strong>1,240+</strong>
+                                <span>Results Declared</span>
+                            </div>
+                            <div class="rs-stat">
+                                <strong>34</strong>
+                                <span>Active Batches</span>
+                            </div>
+                            <div class="rs-stat">
+                                <strong>92%</strong>
+                                <span>ISSB Recommendation Rate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rs-hero-card-wrap">
+                        <div class="rs-result-card" id="rsResultCard">
+                            <div class="rs-card-inner" id="rsCardInner">
+
+                                <!-- FRONT: quick-check form -->
+                                <div class="rs-card-face rs-card-front">
+                                    <div class="rs-card-seal"><i class="bi bi-shield-check"></i></div>
+                                    <span class="rs-card-eyebrow">QUICK CHECK</span>
+                                    <h3>Preview Your Result</h3>
+                                    <p>Type a roll number and see the result slip flip into view — a quick look before you scroll to the full sheet.</p>
+
+                                    <div class="rs-card-input-row">
+                                        <input type="text" id="rsRollInput" class="form-control" placeholder="e.g. FA-1042" maxlength="12" aria-label="Roll number">
+                                        <button type="button" class="rs-card-btn" id="rsPreviewBtn" aria-label="Preview result">
+                                            <i class="bi bi-arrow-right"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="rs-card-chips">
+                                        <span>Try:</span>
+                                        <button type="button" class="rs-chip" data-roll="FA-1042">FA-1042</button>
+                                        <button type="button" class="rs-chip" data-roll="FA-1055">FA-1055</button>
+                                        <button type="button" class="rs-chip" data-roll="FA-1089">FA-1089</button>
+                                    </div>
+                                </div>
+
+                                <!-- BACK: revealed result slip -->
+                                <div class="rs-card-face rs-card-back">
+                                    <div class="rs-card-back-head">
+                                        <span class="rs-card-back-tag">RESULT SLIP</span>
+                                        <button type="button" class="rs-card-reset" id="rsResetBtn" aria-label="Go back">
+                                            <i class="bi bi-arrow-counterclockwise"></i>
+                                        </button>
+                                    </div>
+
+                                    <div class="rs-card-roll" id="rsBackRoll">FA-1042</div>
+                                    <div class="rs-card-name" id="rsBackName">Muhammad Hassan Raza</div>
+                                    <div class="rs-card-meta">
+                                        <span id="rsBackClass">FSc Part-II</span>
+                                        <span class="rs-dot">•</span>
+                                        <span id="rsBackSubject">Overall Result</span>
+                                    </div>
+
+                                    <div class="rs-card-gradebox">
+                                        <div>
+                                            <span class="rs-card-marks-label">Marks</span>
+                                            <strong id="rsBackMarks">87 / 100</strong>
+                                        </div>
+                                        <span class="rs-card-grade rs-badge-A" id="rsBackGrade">A</span>
+                                    </div>
+
+                                    <div class="rs-card-footnote">Sample preview · full result on the sheet below ↓</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= FILTER BAR ================= -->
+        <section class="rs-filter-section" id="rs-filter">
+            <div class="container">
+                <div class="rs-filter-bar rs-reveal">
+
+                    <div class="rs-filter-field">
+                        <label for="rsClassSelect">Class</label>
+                        <select id="rsClassSelect" class="rs-select">
+                            <option value="all" selected>All Classes</option>
+                            <option value="matric">Matric (10th)</option>
+                            <option value="fsc1">FSc Part-I</option>
+                            <option value="fsc2">FSc Part-II</option>
+                            <option value="issb">ISSB Prep Batch</option>
+                            <option value="pma">PMA Long Course Prep</option>
+                        </select>
+                    </div>
+
+                    <div class="rs-filter-field">
+                        <label for="rsYearSelect">Year</label>
+                        <select id="rsYearSelect" class="rs-select">
+                            <option value="all" selected>All Years</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="rs-filter-reset" id="rsFilterReset" title="Reset filters">
+                        <i class="bi bi-arrow-counterclockwise"></i> Reset
+                    </button>
+
+                    <div class="rs-filter-status" id="rsFilterStatus">
+                        <i class="bi bi-info-circle"></i>
+                        <span>Showing all 11 declared results</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= RESULTS TABLE ================= -->
+        <section class="rs-section rs-table-section">
+            <div class="container">
+
+                <div class="rs-section-head rs-reveal">
+                    <span class="rs-tag">Result Sheet</span>
+                    <h2 class="rs-heading">Latest Declared Results</h2>
+                    <p class="rs-section-sub">
+                        Use the filters above to narrow the list by class or year.
+                        Scroll sideways on smaller screens to see every column.
+                    </p>
+                </div>
+
+                <div class="table-responsive rs-table-wrap rs-reveal">
+                    <table class="table rs-table align-middle" id="rsResultsTable">
+                        <thead>
+                            <tr>
+                                <th>Roll No</th>
+                                <th>Student Name</th>
+                                <th>Class</th>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                                <th>Grade</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rsResultsBody">
+                            <tr data-class="fsc2" data-year="2026">
+                                <td class="rs-roll">FA-1042</td>
+                                <td class="rs-student">Muhammad Hassan Raza</td>
+                                <td>FSc Part-II</td>
+                                <td>Physics</td>
+                                <td>87 / 100</td>
+                                <td><span class="rs-badge rs-badge-A">A</span></td>
+                                <td>2026</td>
+                            </tr>
+                            <tr data-class="fsc2" data-year="2026">
+                                <td class="rs-roll">FA-1043</td>
+                                <td class="rs-student">Ayesha Bibi</td>
+                                <td>FSc Part-II</td>
+                                <td>Mathematics</td>
+                                <td>95 / 100</td>
+                                <td><span class="rs-badge rs-badge-Ap">A+</span></td>
+                                <td>2026</td>
+                            </tr>
+                            <tr data-class="matric" data-year="2025">
+                                <td class="rs-roll">FA-1044</td>
+                                <td class="rs-student">Bilal Ahmed</td>
+                                <td>Matric (10th)</td>
+                                <td>English</td>
+                                <td>71 / 100</td>
+                                <td><span class="rs-badge rs-badge-B">B</span></td>
+                                <td>2025</td>
+                            </tr>
+                            <tr data-class="issb" data-year="2026">
+                                <td class="rs-roll">FA-1045</td>
+                                <td class="rs-student">Sana Fatima</td>
+                                <td>ISSB Prep Batch</td>
+                                <td>Aptitude Test</td>
+                                <td>78 / 100</td>
+                                <td><span class="rs-badge rs-badge-B">B</span></td>
+                                <td>2026</td>
+                            </tr>
+                            <tr data-class="matric" data-year="2024">
+                                <td class="rs-roll">FA-1046</td>
+                                <td class="rs-student">Usman Ali Khan</td>
+                                <td>Matric (10th)</td>
+                                <td>Chemistry</td>
+                                <td>58 / 100</td>
+                                <td><span class="rs-badge rs-badge-C">C</span></td>
+                                <td>2024</td>
+                            </tr>
+                            <tr data-class="fsc1" data-year="2025">
+                                <td class="rs-roll">FA-1047</td>
+                                <td class="rs-student">Zainab Malik</td>
+                                <td>FSc Part-I</td>
+                                <td>Urdu</td>
+                                <td>90 / 100</td>
+                                <td><span class="rs-badge rs-badge-Ap">A+</span></td>
+                                <td>2025</td>
+                            </tr>
+                            <tr data-class="pma" data-year="2026">
+                                <td class="rs-roll">FA-1048</td>
+                                <td class="rs-student">Hamza Sheikh</td>
+                                <td>PMA Long Course Prep</td>
+                                <td>Physical Fitness Test</td>
+                                <td>82 / 100</td>
+                                <td><span class="rs-badge rs-badge-A">A</span></td>
+                                <td>2026</td>
+                            </tr>
+                            <tr data-class="fsc1" data-year="2024">
+                                <td class="rs-roll">FA-1049</td>
+                                <td class="rs-student">Mahnoor Iqbal</td>
+                                <td>FSc Part-I</td>
+                                <td>Islamiyat</td>
+                                <td>66 / 100</td>
+                                <td><span class="rs-badge rs-badge-C">C</span></td>
+                                <td>2024</td>
+                            </tr>
+                            <tr data-class="issb" data-year="2025">
+                                <td class="rs-roll">FA-1050</td>
+                                <td class="rs-student">Ahsan Raza</td>
+                                <td>ISSB Prep Batch</td>
+                                <td>Group Discussion</td>
+                                <td>44 / 100</td>
+                                <td><span class="rs-badge rs-badge-F">F</span></td>
+                                <td>2025</td>
+                            </tr>
+                            <tr data-class="matric" data-year="2026">
+                                <td class="rs-roll">FA-1051</td>
+                                <td class="rs-student">Komal Yousaf</td>
+                                <td>Matric (10th)</td>
+                                <td>Mathematics</td>
+                                <td>93 / 100</td>
+                                <td><span class="rs-badge rs-badge-Ap">A+</span></td>
+                                <td>2026</td>
+                            </tr>
+                            <tr data-class="pma" data-year="2026">
+                                <td class="rs-roll">FA-1052</td>
+                                <td class="rs-student">Rayyan Tariq</td>
+                                <td>PMA Long Course Prep</td>
+                                <td>Current Affairs</td>
+                                <td>75 / 100</td>
+                                <td><span class="rs-badge rs-badge-B">B</span></td>
+                                <td>2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="rs-no-results d-none" id="rsNoResults">
+                        <i class="bi bi-search"></i>
+                        <p>No results match this filter. Try a different class or year.</p>
+                    </div>
+                </div>
+
+                <div class="rs-note rs-reveal">
+                    <i class="bi bi-megaphone-fill"></i>
+                    <div>
+                        <strong>Results are updated by administration.</strong>
+                        Contact admin for queries — reach out any time through the
+                        <a href="contact.html" style="color:var(--gold);">Contact page</a>
+                        or the numbers listed in the footer below.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
     <!-- ================= FOOTER START ================= -->
-     
-  <footer class="fa-footer">
+
+    <footer class="fa-footer">
 
         <div class="container">
 
@@ -145,6 +450,145 @@
 
     <!-- Bootstrap JS — is script ke bina toggle/collapse/carousel kaam nahi karega -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ================= RESULTS PAGE SCRIPT ================= -->
+    <script>
+    (function () {
+        // ---- Sample result data for the "Preview Your Result" flip card ----
+        var sampleResults = {
+            "FA-1042": { name: "Muhammad Hassan Raza", cls: "FSc Part-II",           subject: "Physics",           marks: "87 / 100", grade: "A",  gradeClass: "rs-badge-A"  },
+            "FA-1055": { name: "Ayesha Bibi",           cls: "ISSB Prep Batch",       subject: "Aptitude Test",     marks: "78 / 100", grade: "B",  gradeClass: "rs-badge-B"  },
+            "FA-1089": { name: "Zainab Malik",          cls: "FSc Part-I",            subject: "Urdu",              marks: "90 / 100", grade: "A+", gradeClass: "rs-badge-Ap" }
+        };
+        var fallbackResult = { name: "Sample Student", cls: "Matric (10th)", subject: "Overall Result", marks: "82 / 100", grade: "A", gradeClass: "rs-badge-A" };
+
+        var card       = document.getElementById("rsResultCard");
+        var rollInput  = document.getElementById("rsRollInput");
+        var previewBtn = document.getElementById("rsPreviewBtn");
+        var resetBtn   = document.getElementById("rsResetBtn");
+        var chips      = document.querySelectorAll(".rs-chip");
+
+        var backRoll    = document.getElementById("rsBackRoll");
+        var backName    = document.getElementById("rsBackName");
+        var backClass   = document.getElementById("rsBackClass");
+        var backSubject = document.getElementById("rsBackSubject");
+        var backMarks   = document.getElementById("rsBackMarks");
+        var backGrade   = document.getElementById("rsBackGrade");
+
+        function showResult(rollRaw) {
+            var roll = (rollRaw || "").trim().toUpperCase();
+            if (!roll) {
+                previewBtn.classList.add("rs-shake");
+                window.setTimeout(function () { previewBtn.classList.remove("rs-shake"); }, 400);
+                return;
+            }
+
+            var data = sampleResults[roll] || fallbackResult;
+
+            backRoll.textContent = roll;
+            backName.textContent = data.name;
+            backClass.textContent = data.cls;
+            backSubject.textContent = data.subject;
+            backMarks.textContent = data.marks;
+            backGrade.textContent = data.grade;
+            backGrade.className = "rs-card-grade " + data.gradeClass;
+
+            card.classList.add("is-flipped");
+        }
+
+        if (previewBtn) {
+            previewBtn.addEventListener("click", function () { showResult(rollInput.value); });
+        }
+        if (rollInput) {
+            rollInput.addEventListener("keydown", function (e) {
+                if (e.key === "Enter") showResult(rollInput.value);
+            });
+        }
+        if (resetBtn) {
+            resetBtn.addEventListener("click", function () {
+                card.classList.remove("is-flipped");
+            });
+        }
+        chips.forEach(function (chip) {
+            chip.addEventListener("click", function () {
+                var roll = chip.getAttribute("data-roll");
+                if (rollInput) rollInput.value = roll;
+                showResult(roll);
+            });
+        });
+
+        // ---- Simple native <select> filters ----
+        var classSelect = document.getElementById("rsClassSelect");
+        var yearSelect  = document.getElementById("rsYearSelect");
+        var tableRows   = Array.prototype.slice.call(document.querySelectorAll("#rsResultsBody tr"));
+        var noResultsEl = document.getElementById("rsNoResults");
+        var statusEl    = document.getElementById("rsFilterStatus");
+        var resetFilterBtn = document.getElementById("rsFilterReset");
+
+        function applyFilters() {
+            var classValue = classSelect.value;
+            var yearValue  = yearSelect.value;
+            var visibleCount = 0;
+
+            tableRows.forEach(function (row) {
+                var matchesClass = classValue === "all" || row.getAttribute("data-class") === classValue;
+                var matchesYear  = yearValue === "all"  || row.getAttribute("data-year")  === yearValue;
+                var show = matchesClass && matchesYear;
+
+                row.classList.toggle("d-none", !show);
+                if (show) visibleCount++;
+            });
+
+            if (noResultsEl) noResultsEl.classList.toggle("d-none", visibleCount !== 0);
+            updateFilterStatus(visibleCount, classValue, yearValue);
+        }
+
+        function updateFilterStatus(count, classValue, yearValue) {
+            var label;
+            if (classValue === "all" && yearValue === "all") {
+                label = "Showing all " + tableRows.length + " declared results";
+            } else {
+                var classLabel = classSelect.options[classSelect.selectedIndex].text;
+                var yearLabel  = yearSelect.options[yearSelect.selectedIndex].text;
+                label = "Showing " + count + " result" + (count === 1 ? "" : "s") + " — " + classLabel + " · " + yearLabel;
+            }
+
+            statusEl.querySelector("span").textContent = label;
+            statusEl.classList.add("rs-updated");
+            window.setTimeout(function () {
+                statusEl.classList.remove("rs-updated");
+            }, 900);
+        }
+
+        if (classSelect) classSelect.addEventListener("change", applyFilters);
+        if (yearSelect)  yearSelect.addEventListener("change", applyFilters);
+
+        if (resetFilterBtn) {
+            resetFilterBtn.addEventListener("click", function () {
+                classSelect.value = "all";
+                yearSelect.value = "all";
+                applyFilters();
+            });
+        }
+
+        // ---- Scroll-reveal: fades/slides sections up as they enter view ----
+        var revealEls = document.querySelectorAll(".rs-reveal");
+        if ("IntersectionObserver" in window && revealEls.length) {
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("in-view");
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+            revealEls.forEach(function (el) { io.observe(el); });
+        } else {
+            revealEls.forEach(function (el) { el.classList.add("in-view"); });
+        }
+    })();
+    </script>
 
 </body>
 
