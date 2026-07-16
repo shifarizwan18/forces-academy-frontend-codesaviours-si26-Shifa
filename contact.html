@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact — Forces Academy Faisalabad</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-    <!-- ⚠️ Path check: agar yeh page kisi subfolder mein hai to "css/style.css"
-         ki jagah "../css/style.css" karein -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
-
 <body>
-
     <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
         <div class="container">
-
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="images/logo.png" alt="Logo" class="logo">
                 <div class="logo-text ms-2">
@@ -26,44 +19,335 @@
                     <span>FAISALABAD</span>
                 </div>
             </a>
-
             <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse justify-content-end" id="navbarMenu">
                 <ul class="navbar-nav align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
                     <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
                     <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
                 </ul>
-
                 <a href="#" class="portal-btn">
                     <i class="bi bi-mortarboard-fill"></i>
                     Student Portal
                 </a>
             </div>
-
         </div>
     </nav>
-    
-    <!-- ================= FOOTER START ================= -->
-     
-  <footer class="fa-footer">
-
+    <main class="ct-main">
+        <header class="ct-hero" id="ctHero">
+            <div class="ct-hero-bg" aria-hidden="true">
+                <div class="ct-hero-pattern"></div>
+                <div class="ct-hero-spotlight"></div>
+            </div>
+            <div class="container ct-hero-inner">
+                <div class="ct-hero-left">
+                    <span class="ct-eyebrow">
+                        <span class="ct-eyebrow-dot"></span>Contact Desk
+                    </span>
+                    <h1>Reach The Academy — <span>We're Listening</span></h1>
+                    <p>
+                        Question about admissions, a fee, or a result? Send it across and our
+                        team will get back to you directly — no call centre, no runaround.
+                    </p>
+                    <div class="ct-console">
+                        <div class="ct-mode-toggle" role="tablist" aria-label="Preferred contact method">
+                            <button type="button" class="ct-mode-btn active" data-mode="message" role="tab" aria-selected="true">
+                                <i class="bi bi-envelope-fill"></i> Message
+                            </button>
+                            <button type="button" class="ct-mode-btn" data-mode="call" role="tab" aria-selected="false">
+                                <i class="bi bi-telephone-fill"></i> Call
+                            </button>
+                            <button type="button" class="ct-mode-btn" data-mode="visit" role="tab" aria-selected="false">
+                                <i class="bi bi-geo-alt-fill"></i> Visit
+                            </button>
+                        </div>
+                        <div class="ct-console-body">
+                            <div class="ct-console-readout" id="consoleReadout">
+                                <span class="ct-readout-label" id="readoutLabel">Avg. Response</span>
+                                <span class="ct-readout-value" id="readoutValue">&lt; 24 Hrs</span>
+                            </div>
+                            <a href="#messageSection" class="ct-mode-cta" id="modeCta">
+                                <i class="bi bi-send-fill" id="modeCtaIcon"></i>
+                                <span id="modeCtaText">Jump To The Form</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ct-facts">
+                        <div class="ct-fact">
+                            <strong>&lt; 24 Hrs</strong>
+                            <span>Response Time</span>
+                        </div>
+                        <div class="ct-fact">
+                            <strong>Mon&ndash;Sat</strong>
+                            <span>Office Days</span>
+                        </div>
+                        <div class="ct-fact">
+                            <strong>Urdu / English</strong>
+                            <span>Languages Spoken</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ct-hero-right">
+                    <div class="ct-phone" id="ctPhone">
+                        <div class="ct-phone-frame">
+                            <span class="ct-phone-btn ct-phone-btn--power" aria-hidden="true"></span>
+                            <span class="ct-phone-btn ct-phone-btn--vol-up" aria-hidden="true"></span>
+                            <span class="ct-phone-btn ct-phone-btn--vol-down" aria-hidden="true"></span>
+                            <div class="ct-phone-screen">
+                                <div class="ct-phone-notch"></div>
+                                <div class="ct-phone-statusbar">
+                                    <span id="phoneClock">--:--</span>
+                                    <span class="ct-phone-signal" aria-hidden="true">
+                                        <i class="bi bi-reception-4"></i>
+                                        <i class="bi bi-wifi"></i>
+                                        <i class="bi bi-battery-full"></i>
+                                    </span>
+                                </div>
+                                <div class="ct-phone-app">
+                                    <div class="ct-phone-app-header">
+                                        <div class="ct-phone-avatar">FA</div>
+                                        <div class="ct-phone-app-heading">
+                                            <strong>Forces Academy</strong>
+                                            <span class="ct-phone-status-pill" id="phoneStatusPill">
+                                                <span class="ct-status-dot"></span>
+                                                <span id="phoneStatusText">Checking hours…</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="ct-phone-viewport" id="phoneViewport">
+                                        <div class="ct-phone-content" id="phoneContent">
+                                            <div class="ct-phone-card" id="phoneCard">
+                                                <div class="ct-phone-row">
+                                                    <i class="bi bi-envelope-fill" id="phoneCardIcon"></i>
+                                                    <span id="phoneCardText">info@forcesacademyfsd.edu.pk</span>
+                                                </div>
+                                                <div class="ct-phone-row">
+                                                    <i class="bi bi-clock-fill"></i>
+                                                    <span id="phoneCardSub">Replies within 24 hours</span>
+                                                </div>
+                                                <button type="button" class="ct-phone-action" id="phoneAction">
+                                                    <i class="bi bi-send-fill" id="phoneActionIcon"></i>
+                                                    <span id="phoneActionText">Send a Message</span>
+                                                </button>
+                                            </div>
+                                            <div class="ct-phone-info">
+                                                <div class="ct-phone-info-row">
+                                                    <i class="bi bi-geo-alt-fill"></i>
+                                                    <span>Faisal Town, Canal Road, Faisalabad</span>
+                                                </div>
+                                                <div class="ct-phone-info-row">
+                                                    <i class="bi bi-clock-fill"></i>
+                                                    <span>Mon &ndash; Sat: 8:00 AM &ndash; 6:00 PM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ct-phone-dots" id="phoneDots" role="tablist" aria-label="Phone screen slide">
+                                        <button type="button" class="ct-phone-dot active" data-mode="message" aria-label="Message slide"></button>
+                                        <button type="button" class="ct-phone-dot" data-mode="call" aria-label="Call slide"></button>
+                                        <button type="button" class="ct-phone-dot" data-mode="visit" aria-label="Visit slide"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="ct-section ct-section-light pt-0" id="messageSection">
+            <div class="container">
+                <div class="ct-section-head ct-reveal">
+                    <h2 class="ct-heading">Send A Message</h2>
+                    <p class="ct-section-sub">Fill in the details below — every field marked with
+                        <span style="color:var(--gold);">*</span> is required.</p>
+                </div>
+                <div class="ct-grid">
+                    <div class="ct-form-card ct-reveal">
+                        <h3>Dispatch Form</h3>
+                        <p>We read every message ourselves — expect a reply within one working day.</p>
+                        <div class="ct-form-alert" id="formSuccessAlert">
+                            <i class="bi bi-check-circle-fill"></i>
+                            <div>
+                                <strong>Message received.</strong><br>
+                                Thanks for reaching out — our admissions desk will get back to you within 24 hours.
+                            </div>
+                        </div>
+                        <form id="contactForm" novalidate>
+                            <div class="ct-row-2">
+                                <div class="ct-field" id="field-name">
+                                    <label for="ctName">Full Name<span class="required-mark">*</span></label>
+                                    <input type="text" class="form-control" id="ctName" name="name" placeholder="e.g. Ahmad Raza" autocomplete="name">
+                                    <div class="invalid-feedback">Please enter your full name.</div>
+                                </div>
+                                <div class="ct-field" id="field-phone">
+                                    <label for="ctPhone">Phone Number<span class="required-mark">*</span></label>
+                                    <input type="tel" class="form-control" id="ctPhone" name="phone" placeholder="03XX-XXXXXXX" autocomplete="tel">
+                                    <div class="invalid-feedback">Please enter a valid phone number.</div>
+                                </div>
+                            </div>
+                            <div class="ct-field" id="field-email">
+                                <label for="ctEmail">Email Address<span class="required-mark">*</span></label>
+                                <input type="email" class="form-control" id="ctEmail" name="email" placeholder="you@example.com" autocomplete="email">
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+                            <div class="ct-field" id="field-subject">
+                                <label for="ctSubject">Subject<span class="required-mark">*</span></label>
+                                <select class="form-select" id="ctSubject" name="subject">
+                                    <option value="" selected disabled>Choose a topic…</option>
+                                    <option value="admissions">Admissions Inquiry</option>
+                                    <option value="fees">Fee / Course Question</option>
+                                    <option value="results">Results Query</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="invalid-feedback">Please choose a subject.</div>
+                            </div>
+                            <div class="ct-field" id="field-message">
+                                <label for="ctMessage">Message<span class="required-mark">*</span></label>
+                                <textarea class="form-control" id="ctMessage" name="message" rows="5" placeholder="Tell us a bit about what you need…"></textarea>
+                                <div class="invalid-feedback">Please enter a message (at least 10 characters).</div>
+                            </div>
+                            <button type="submit" class="ct-submit-btn" id="ctSubmitBtn">
+                                <i class="bi bi-send-fill"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                    <div class="ct-side-card ct-reveal">
+                        <h4>Quick Contact</h4>
+                        <div class="ct-side-row">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Faisal Town, Canal Road, Faisalabad</span>
+                        </div>
+                        <div class="ct-side-row">
+                            <i class="bi bi-telephone-fill"></i>
+                            <span><a href="tel:+923156954383" style="color:inherit;text-decoration:none;">0315-6954383</a></span>
+                        </div>
+                        <div class="ct-side-row">
+                            <i class="bi bi-envelope-fill"></i>
+                            <span><a href="mailto:info@forcesacademyfsd.edu.pk" style="color:inherit;text-decoration:none;">info@forcesacademyfsd.edu.pk</a></span>
+                        </div>
+                        <div class="ct-side-row">
+                            <i class="bi bi-clock-fill"></i>
+                            <span>Mon &ndash; Sat: 8:00 AM &ndash; 6:00 PM</span>
+                        </div>
+                        <div class="ct-side-note">
+                            Prefer to talk it through? Call the number above during office hours
+                            and ask for the admissions desk directly.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ct-section pt-0">
+            <div class="container">
+                <div class="ct-section-head ct-reveal">
+                    <h2 class="ct-heading">Contact Channels</h2>
+                    <p class="ct-section-sub">Four quick ways to reach us — tap to copy a number or address.</p>
+                </div>
+                <div class="ct-channels ct-reveal">
+                    <div class="ct-channel-card">
+                        <div class="ct-channel-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div class="ct-channel-label">Address</div>
+                        <div class="ct-channel-value">Faisal Town, Canal Road, Faisalabad</div>
+                        <button type="button" class="ct-copy-btn" data-copy="Faisal Town, Canal Road, Faisalabad">
+                            <i class="bi bi-clipboard"></i> Copy
+                        </button>
+                    </div>
+                    <div class="ct-channel-card">
+                        <div class="ct-channel-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div class="ct-channel-label">Phone</div>
+                        <div class="ct-channel-value">0315-6954383</div>
+                        <button type="button" class="ct-copy-btn" data-copy="0315-6954383">
+                            <i class="bi bi-clipboard"></i> Copy
+                        </button>
+                    </div>
+                    <div class="ct-channel-card">
+                        <div class="ct-channel-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div class="ct-channel-label">Email</div>
+                        <div class="ct-channel-value">info@forcesacademyfsd.edu.pk</div>
+                        <button type="button" class="ct-copy-btn" data-copy="info@forcesacademyfsd.edu.pk">
+                            <i class="bi bi-clipboard"></i> Copy
+                        </button>
+                    </div>
+                    <div class="ct-channel-card">
+                        <div class="ct-channel-icon"><i class="bi bi-clock-fill"></i></div>
+                        <div class="ct-channel-label">Office Hours</div>
+                        <div class="ct-channel-value">Mon &ndash; Sat: 8:00 AM &ndash; 6:00 PM</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ct-section ct-section-light pt-0" id="mapSection">
+            <div class="container">
+                <div class="ct-section-head ct-reveal">
+                    <h2 class="ct-heading">Find Us On The Map</h2>
+                    <p class="ct-section-sub">Faisal Town, Canal Road — a short walk from the main Canal Road signal.</p>
+                </div>
+                <div class="ct-map-panel ct-reveal">
+                    <div class="ct-map-frame-wrap">
+                        <iframe
+                            src="https://www.google.com/maps?q=Faisal%20Town%2C%20Canal%20Road%2C%20Faisalabad&output=embed"
+                            title="Forces Academy Faisalabad location on Google Maps"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="ct-map-caption">
+                        <span>Faisal Town, Canal Road, Faisalabad</span>
+                        <a href="https://www.google.com/maps?q=Faisal%20Town%2C%20Canal%20Road%2C%20Faisalabad" target="_blank" rel="noopener noreferrer">
+                            Open in Google Maps <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ct-section pt-0">
+            <div class="container">
+                <div class="ct-section-head ct-reveal">
+                    <h2 class="ct-heading">Stay On Frequency</h2>
+                    <p class="ct-section-sub">Follow along for batch updates, ISSB tips and result announcements.</p>
+                </div>
+                <div class="ct-social-row ct-reveal">
+                    <a class="ct-social-card" data-platform="facebook" href="https://www.facebook.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer">
+                        <div class="ct-social-icon"><i class="bi bi-facebook"></i></div>
+                        <div class="ct-social-text">
+                            <strong>Facebook</strong>
+                            <span>Batch updates &amp; admission alerts</span>
+                        </div>
+                        <i class="bi bi-arrow-up-right ct-social-arrow" aria-hidden="true"></i>
+                    </a>
+                    <a class="ct-social-card" data-platform="instagram" href="https://www.instagram.com/forcesacademyfaisalabad/" target="_blank" rel="noopener noreferrer">
+                        <div class="ct-social-icon"><i class="bi bi-instagram"></i></div>
+                        <div class="ct-social-text">
+                            <strong>Instagram</strong>
+                            <span>Behind-the-scenes &amp; photo results</span>
+                        </div>
+                        <i class="bi bi-arrow-up-right ct-social-arrow" aria-hidden="true"></i>
+                    </a>
+                    <a class="ct-social-card" data-platform="youtube" href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w" target="_blank" rel="noopener noreferrer">
+                        <div class="ct-social-icon"><i class="bi bi-youtube"></i></div>
+                        <div class="ct-social-text">
+                            <strong>YouTube</strong>
+                            <span>ISSB tips &amp; mock interview videos</span>
+                        </div>
+                        <i class="bi bi-arrow-up-right ct-social-arrow" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="fa-footer">
         <div class="container">
-
             <div class="fa-footer-grid">
-
-                <!-- Brand -->
                 <div class="fa-footer-brand">
-
                     <div class="fa-footer-logo">
                         <img src="images/logo.png" alt="Forces Academy Faisalabad logo">
                         <div>
@@ -71,16 +355,12 @@
                             <span>FAISALABAD</span>
                         </div>
                     </div>
-
                     <p class="fa-footer-about">
                         Preparing tomorrow's leaders through discipline, character and
                         academic rigor &mdash; dedicated coaching for ISSB, PMA Long Course
                         and every step of the selection process.
                     </p>
-
                 </div>
-
-                <!-- Quick Links -->
                 <div class="fa-footer-col">
                     <h5>Quick Links</h5>
                     <ul class="fa-footer-links">
@@ -93,8 +373,6 @@
                         <li><a href="contact.html"><i class="bi bi-caret-right-fill"></i>Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact -->
                 <div class="fa-footer-col">
                     <h5>Contact Us</h5>
                     <ul class="fa-footer-contact">
@@ -116,8 +394,6 @@
                         </li>
                     </ul>
                 </div>
-
-                <!-- Get in Touch (social) -->
                 <div class="fa-footer-col">
                     <h5>Get in Touch</h5>
                     <p class="fa-footer-social-text">Follow us for ISSB tips, batch updates and results.</p>
@@ -127,9 +403,7 @@
                         <a href="https://www.youtube.com/channel/UCRF74RQe3TiQl-_qyFZb-2w" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
-
             </div>
-
             <div class="fa-footer-bottom">
                 <p>&copy; 2026 <strong>Forces Academy Faisalabad</strong>. All rights reserved.</p>
                 <div class="fa-footer-legal">
@@ -137,15 +411,284 @@
                     <a href="#">Terms of Use</a>
                 </div>
             </div>
-
         </div>
-
     </footer>
-    <!-- ================= FOOTER END ================= -->
-
-    <!-- Bootstrap JS — is script ke bina toggle/collapse/carousel kaam nahi karega -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script>
+        (function () {
+            var pill = document.getElementById('phoneStatusPill');
+            var text = document.getElementById('phoneStatusText');
+            var phoneClock = document.getElementById('phoneClock');
+            if (!pill) return;
+            function pad(n) { return n < 10 ? '0' + n : '' + n; }
+            function tick() {
+                var now = new Date();
+                var day = now.getDay();
+                var hour = now.getHours();
+                if (phoneClock) {
+                    phoneClock.textContent = pad(now.getHours()) + ':' + pad(now.getMinutes());
+                }
+                var isOpen = (day >= 1 && day <= 6) && (hour >= 8 && hour < 18);
+                pill.classList.toggle('is-open', isOpen);
+                pill.classList.toggle('is-closed', !isOpen);
+                text.textContent = isOpen ? 'Open Now' : 'Currently Closed';
+            }
+            tick();
+            setInterval(tick, 30000);
+        })();
+    </script>
+    <script>
+        (function () {
+            var buttons = document.querySelectorAll('.ct-mode-btn');
+            var cta = document.getElementById('modeCta');
+            var ctaIcon = document.getElementById('modeCtaIcon');
+            var ctaText = document.getElementById('modeCtaText');
+            var readoutLabel = document.getElementById('readoutLabel');
+            var readoutValue = document.getElementById('readoutValue');
+            var phoneContent = document.getElementById('phoneContent');
+            var cardIcon = document.getElementById('phoneCardIcon');
+            var cardText = document.getElementById('phoneCardText');
+            var cardSub = document.getElementById('phoneCardSub');
+            var actionIcon = document.getElementById('phoneActionIcon');
+            var actionText = document.getElementById('phoneActionText');
+            var dots = document.querySelectorAll('.ct-phone-dot');
+            var phoneEl = document.getElementById('ctPhone');
+            if (!buttons.length || !cta) return;
+            var order = ['message', 'call', 'visit'];
+            var current = 'message';
+            var autoplayTimer = null;
+            var isAnimating = false;
+            var AUTOPLAY_MS = 4200;
+            var modes = {
+                message: {
+                    href: '#messageSection', icon: 'bi-send-fill', text: 'Jump To The Form',
+                    label: 'Avg. Response', value: '< 24 Hrs',
+                    cardIcon: 'bi-envelope-fill', cardText: 'info@forcesacademyfsd.edu.pk', cardSub: 'Replies within 24 hours',
+                    actionIcon: 'bi-send-fill', actionText: 'Send a Message'
+                },
+                call: {
+                    href: 'tel:+923156954383', icon: 'bi-telephone-fill', text: 'Call 0315-6954383',
+                    label: 'Avg. Wait', value: '~ 2 Min',
+                    cardIcon: 'bi-telephone-fill', cardText: '0315-6954383', cardSub: 'Office hours, Mon–Sat',
+                    actionIcon: 'bi-telephone-fill', actionText: 'Call Now'
+                },
+                visit: {
+                    href: '#mapSection', icon: 'bi-signpost-split', text: 'See Us On The Map',
+                    label: 'From Canal Rd Signal', value: 'Short Walk',
+                    cardIcon: 'bi-geo-alt-fill', cardText: 'Faisal Town, Canal Road', cardSub: 'Faisalabad',
+                    actionIcon: 'bi-signpost-split', actionText: 'Get Directions'
+                }
+            };
+            function setSideEffects(mode) {
+                var m = modes[mode];
+                buttons.forEach(function (b) {
+                    var active = b.dataset.mode === mode;
+                    b.classList.toggle('active', active);
+                    b.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+                ctaIcon.className = 'bi ' + m.icon;
+                ctaText.textContent = m.text;
+                cta.setAttribute('href', m.href);
+                if (readoutLabel && readoutValue) {
+                    readoutLabel.textContent = m.label;
+                    readoutValue.textContent = m.value;
+                }
+                dots.forEach(function (d) {
+                    d.classList.toggle('active', d.dataset.mode === mode);
+                });
+            }
+            function applyCardContent(mode) {
+                var m = modes[mode];
+                cardIcon.className = 'bi ' + m.cardIcon;
+                cardText.textContent = m.cardText;
+                cardSub.textContent = m.cardSub;
+                actionIcon.className = 'bi ' + m.actionIcon;
+                actionText.textContent = m.actionText;
+            }
+            function goToMode(mode, direction) {
+                if (mode === current || isAnimating) return;
+                isAnimating = true;
+                direction = direction || 'forward';
+                var outClass = direction === 'forward' ? 'ct-slide-out-left' : 'ct-slide-out-right';
+                var inClass = direction === 'forward' ? 'ct-slide-in-right' : 'ct-slide-in-left';
+                phoneContent.classList.add(outClass);
+                window.setTimeout(function () {
+                    applyCardContent(mode);
+                    current = mode;
+                    setSideEffects(mode);
+                    phoneContent.classList.remove(outClass);
+                    phoneContent.classList.add(inClass);
+                    window.setTimeout(function () {
+                        phoneContent.classList.remove(inClass);
+                        isAnimating = false;
+                    }, 460);
+                }, 320);
+            }
+            function nextMode() {
+                var idx = order.indexOf(current);
+                var next = order[(idx + 1) % order.length];
+                goToMode(next, 'forward');
+            }
+            function startAutoplay() {
+                stopAutoplay();
+                autoplayTimer = window.setInterval(nextMode, AUTOPLAY_MS);
+            }
+            function stopAutoplay() {
+                if (autoplayTimer) {
+                    window.clearInterval(autoplayTimer);
+                    autoplayTimer = null;
+                }
+            }
+            function restartAutoplay() {
+                startAutoplay();
+            }
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var mode = btn.dataset.mode;
+                    var dir = order.indexOf(mode) >= order.indexOf(current) ? 'forward' : 'back';
+                    goToMode(mode, dir);
+                    restartAutoplay();
+                });
+            });
+            dots.forEach(function (dot) {
+                dot.addEventListener('click', function () {
+                    var mode = dot.dataset.mode;
+                    var dir = order.indexOf(mode) >= order.indexOf(current) ? 'forward' : 'back';
+                    goToMode(mode, dir);
+                    restartAutoplay();
+                });
+            });
+            if (phoneEl) {
+                phoneEl.addEventListener('mouseenter', stopAutoplay);
+                phoneEl.addEventListener('mouseleave', startAutoplay);
+                phoneEl.addEventListener('touchstart', stopAutoplay, { passive: true });
+            }
+            var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!prefersReducedMotion) {
+                startAutoplay();
+            }
+        })();
+    </script>
+    <script>
+        (function () {
+            var form = document.getElementById('contactForm');
+            if (!form) return;
+            var submitBtn = document.getElementById('ctSubmitBtn');
+            var successAlert = document.getElementById('formSuccessAlert');
+            var fields = {
+                name: {
+                    input: document.getElementById('ctName'),
+                    wrap: document.getElementById('field-name'),
+                    validate: function (v) { return v.trim().length >= 2; }
+                },
+                phone: {
+                    input: document.getElementById('ctPhone'),
+                    wrap: document.getElementById('field-phone'),
+                    validate: function (v) { return /^[0-9+\-\s]{7,15}$/.test(v.trim()); }
+                },
+                email: {
+                    input: document.getElementById('ctEmail'),
+                    wrap: document.getElementById('field-email'),
+                    validate: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }
+                },
+                subject: {
+                    input: document.getElementById('ctSubject'),
+                    wrap: document.getElementById('field-subject'),
+                    validate: function (v) { return v.trim() !== ''; }
+                },
+                message: {
+                    input: document.getElementById('ctMessage'),
+                    wrap: document.getElementById('field-message'),
+                    validate: function (v) { return v.trim().length >= 10; }
+                }
+            };
+            function validateField(key) {
+                var f = fields[key];
+                var ok = f.validate(f.input.value);
+                f.input.classList.toggle('is-invalid', !ok);
+                f.wrap.classList.toggle('has-error', !ok);
+                return ok;
+            }
+            Object.keys(fields).forEach(function (key) {
+                var f = fields[key];
+                var evt = (f.input.tagName === 'SELECT') ? 'change' : 'input';
+                f.input.addEventListener(evt, function () {
+                    if (f.wrap.classList.contains('has-error')) validateField(key);
+                });
+            });
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var allValid = Object.keys(fields).every(validateField);
+                if (!allValid) {
+                    var firstInvalid = form.querySelector('.is-invalid');
+                    if (firstInvalid) firstInvalid.focus();
+                    successAlert.classList.remove('show');
+                    return;
+                }
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending…';
+                setTimeout(function () {
+                    successAlert.classList.add('show');
+                    form.reset();
+                    Object.keys(fields).forEach(function (key) {
+                        fields[key].input.classList.remove('is-invalid');
+                        fields[key].wrap.classList.remove('has-error');
+                    });
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<i class="bi bi-send-fill"></i> Send Message';
+                    successAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 900);
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            var revealEls = document.querySelectorAll('.ct-reveal');
+            if (!revealEls.length) return;
+            if (!('IntersectionObserver' in window)) {
+                revealEls.forEach(function (el) { el.classList.add('in-view'); });
+                return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+            revealEls.forEach(function (el) { io.observe(el); });
+        })();
+    </script>
+    <script>
+        (function () {
+            var buttons = document.querySelectorAll('.ct-copy-btn[data-copy]');
+            buttons.forEach(function (btn) {
+                var originalHTML = btn.innerHTML;
+                btn.addEventListener('click', function () {
+                    var value = btn.getAttribute('data-copy');
+                    function showCopied() {
+                        btn.classList.add('copied');
+                        btn.innerHTML = '<i class="bi bi-check2"></i> Copied';
+                        setTimeout(function () {
+                            btn.classList.remove('copied');
+                            btn.innerHTML = originalHTML;
+                        }, 1600);
+                    }
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(value).then(showCopied);
+                    } else {
+                        var temp = document.createElement('textarea');
+                        temp.value = value;
+                        document.body.appendChild(temp);
+                        temp.select();
+                        try { document.execCommand('copy'); } catch (err) {}
+                        document.body.removeChild(temp);
+                        showCopied();
+                    }
+                });
+            });
+        })();
+    </script>
 </body>
-
 </html>
