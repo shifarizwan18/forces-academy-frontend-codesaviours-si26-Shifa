@@ -8,10 +8,79 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 
     <!-- ⚠️ Path check: agar yeh page kisi subfolder mein hai to "css/style.css"
          ki jagah "../css/style.css" karein -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+
+    <!-- GLightbox theme override — match site's forest-green / gold palette -->
+    <style>
+        .goverlay{
+            background: rgba(3,26,15,.94) !important;
+        }
+        .gslide-image{
+            background: var(--forest-dark, #031a0f) !important;
+        }
+        .gslide-description,
+        .gdesc-inner{
+            background: var(--forest-dark, #031a0f) !important;
+            border-top: 2px solid var(--gold, #ffd54f);
+        }
+        .gdesc-inner .gslide-title{
+            font-family:'Oswald',sans-serif;
+            color: var(--cream, #f5f2ea) !important;
+        }
+        .gdesc-inner .gslide-desc{
+            font-family:'Space Mono',monospace;
+            color: var(--khaki, #cbbf95) !important;
+        }
+        .gnext, .gprev, .gclose{
+            color: var(--gold, #ffd54f) !important;
+            background: rgba(3,26,15,.6) !important;
+        }
+        .gnext:hover, .gprev:hover, .gclose:hover{
+            background: rgba(255,213,79,.15) !important;
+        }
+        .gbtn.gclose svg, .gbtn.gnext svg, .gbtn.gprev svg{
+            fill: var(--gold, #ffd54f) !important;
+        }
+        .glightbox-clean .gnext, .glightbox-clean .gprev{
+            background-color: rgba(3,26,15,.6) !important;
+        }
+
+        /* Page background pattern fix — hero stays dark green,
+           content section below matches the rest of the site (white) */
+        .gl-main{
+            background: #f5f2ea;
+        }
+        .gl-hero{
+            background: var(--forest-dark, #031a0f);
+        }
+        .rs-section.pt-0{
+            background: #f5f2ea;
+            padding-top: 30px !important;
+            padding-bottom: 70px;
+        }
+        .gl-filters{
+            margin-top: 0;
+        }
+        .gl-filter-btn{
+            color: var(--forest-dark, #031a0f);
+            border-color: rgba(3,26,15,.25);
+        }
+        .gl-filter-btn:hover{
+            color: var(--forest-dark, #031a0f);
+            border-color: var(--gold, #ffd54f);
+        }
+        .gl-filter-btn.active{
+            color: var(--forest-dark, #031a0f);
+        }
+        .gl-empty{
+            color: rgba(3,26,15,.5);
+        }
+    </style>
 </head>
 
 <body>
@@ -52,7 +121,161 @@
 
         </div>
     </nav>
-    
+
+    <!-- ================= GALLERY MAIN ================= -->
+    <main class="gl-main">
+
+        <!-- ---------- Hero ---------- -->
+        <section class="gl-hero">
+            <div class="container gl-hero-inner">
+                <span class="gl-eyebrow">Campus Archive</span>
+                <h1 class="gl-heading">Every parade, every classroom,<br><span>every step earned.</span></h1>
+                <p class="gl-sub">A running log of the moments that make up a cadet's time at Forces Academy —
+                    from the drill ground to the exam hall. Filter by category or open any frame full-size.</p>
+                <div class="gl-strip">
+                    <span><i class="bi bi-camera2"></i> 40+ frames logged</span>
+                    <span><i class="bi bi-flag"></i> Events</span>
+                    <span><i class="bi bi-trophy"></i> Sports</span>
+                    <span><i class="bi bi-journal-bookmark"></i> Academic</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------- Filters + Grid ---------- -->
+        <section class="rs-section pt-0">
+            <div class="container">
+
+                <div class="gl-filters">
+                    <button class="gl-filter-btn active" data-filter="all">All</button>
+                    <button class="gl-filter-btn" data-filter="events">Events</button>
+                    <button class="gl-filter-btn" data-filter="sports">Sports</button>
+                    <button class="gl-filter-btn" data-filter="academic">Academic</button>
+                </div>
+
+                <div class="gl-grid" id="glGrid">
+
+                    <!-- EVENTS -->
+                    <div class="gl-card" data-category="events">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1759746407477-b1d8088fe11a?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Annual Investiture Ceremony">
+                            <span class="gl-tag">Events</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1759746407477-b1d8088fe11a?auto=format&fit=crop&w=800&h=533&q=80" alt="Investiture ceremony">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Investiture Ceremony</strong><span>Spring Batch</span></span></span>
+                        </a>
+                    </div>
+
+                    <div class="gl-card" data-category="events">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1660895000335-f18ade1827a1?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Annual Parade Ceremony">
+                            <span class="gl-tag">Events</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1660895000335-f18ade1827a1?auto=format&fit=crop&w=800&h=533&q=80" alt="Annual parade ceremony">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Annual Parade Ceremony</strong><span>Discipline &amp; Drill Demonstration</span></span></span>
+                        </a>
+                    </div>
+
+                    <div class="gl-card" data-category="events">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Guest Lecture Series">
+                            <span class="gl-tag">Events</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=800&h=533&q=80" alt="Guest lecture">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Guest Lecture Series</strong><span>ISSB Alumni Talk</span></span></span>
+                        </a>
+                    </div>
+
+                    <div class="gl-card" data-category="events">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Convocation">
+                            <span class="gl-tag">Events</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&h=533&q=80" alt="Convocation">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Convocation Day</strong><span>Graduating Batch</span></span></span>
+                        </a>
+                    </div>
+
+                    <!-- SPORTS -->
+                    <div class="gl-card" data-category="sports">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1485400031595-976c74cf4e25?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Inter-Batch Football">
+                            <span class="gl-tag">Sports</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1485400031595-976c74cf4e25?auto=format&fit=crop&w=800&h=533&q=80" alt="Football match">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Inter-Batch Football</strong><span>Sports Week</span></span></span>
+                        </a>
+                    </div>
+
+                    <div class="gl-card" data-category="sports">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Track & Field Trials">
+                            <span class="gl-tag">Sports</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?auto=format&fit=crop&w=800&h=533&q=80" alt="Track and field trials">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Track &amp; Field Trials</strong><span>Physical Assessment</span></span></span>
+                        </a>
+                    </div>
+
+                    <div class="gl-card" data-category="sports">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1521055170349-25f955971658?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Basketball Finals">
+                            <span class="gl-tag">Sports</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1521055170349-25f955971658?auto=format&fit=crop&w=800&h=533&q=80" alt="Basketball finals">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Basketball Finals</strong><span>Inter-House Championship</span></span></span>
+                        </a>
+                    </div>
+
+                    <div class="gl-card" data-category="sports">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1525088068454-ff2c453e50e9?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Girls' Soccer Match">
+                            <span class="gl-tag">Sports</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1525088068454-ff2c453e50e9?auto=format&fit=crop&w=800&h=533&q=80" alt="Girls soccer match">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Girls' Soccer Match</strong><span>Annual Sports Gala</span></span></span>
+                        </a>
+                    </div>
+
+                    <!-- ACADEMIC -->
+                    <div class="gl-card" data-category="academic">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1758270704587-43339a801396?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Classroom Session">
+                            <span class="gl-tag">Academic</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1758270704587-43339a801396?auto=format&fit=crop&w=800&h=533&q=80" alt="Classroom session">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Classroom Session</strong><span>ISSB Prep Batch</span></span></span>
+                        </a>
+                    </div>
+
+                    <div class="gl-card" data-category="academic">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1758270705290-62b6294dd044?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Group Discussion Practice">
+                            <span class="gl-tag">Academic</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1758270705290-62b6294dd044?auto=format&fit=crop&w=800&h=533&q=80" alt="Group discussion">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Group Discussion Practice</strong><span>PIQ &amp; GTO Prep</span></span></span>
+                        </a>
+                    </div>
+
+                    <div class="gl-card" data-category="academic">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1741699427799-3fbb70fce948?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Study Group">
+                            <span class="gl-tag">Academic</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1741699427799-3fbb70fce948?auto=format&fit=crop&w=800&h=533&q=80" alt="Study group">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Study Group</strong><span>Peer Learning Hour</span></span></span>
+                        </a>
+                    </div>
+
+                    <div class="gl-card" data-category="academic">
+                        <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1758270704286-83476deb3bd1?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Classroom Q&A Session">
+                            <span class="gl-tag">Academic</span>
+                            <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
+                            <img src="https://images.unsplash.com/photo-1758270704286-83476deb3bd1?auto=format&fit=crop&w=800&h=533&q=80" alt="Classroom Q and A session">
+                            <span class="gl-overlay"><span class="gl-cap"><strong>Classroom Q&amp;A Session</strong><span>Final ISSB Simulation</span></span></span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="gl-empty" id="glEmpty" style="display:none;">
+                    <i class="bi bi-camera"></i><br>No frames in this category yet.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
     <!-- ================= FOOTER START ================= -->
 
   <footer class="fa-footer">
@@ -145,6 +368,43 @@
 
     <!-- Bootstrap JS — is script ke bina toggle/collapse/carousel kaam nahi karega -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // ---- category filter ----
+        const buttons = document.querySelectorAll('.gl-filter-btn');
+        const cards = document.querySelectorAll('.gl-card');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function () {
+                buttons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const cat = this.dataset.filter;
+
+                let visibleCount = 0;
+                cards.forEach((card) => {
+                    const match = cat === 'all' || card.dataset.category === cat;
+                    card.classList.toggle('gl-hidden', !match);
+                    if (match) {
+                        card.style.animation = 'none';
+                        card.offsetHeight; // restart animation
+                        card.style.animation = `glIn .45s ease forwards ${(visibleCount * 0.05)}s`;
+                        visibleCount++;
+                    }
+                });
+
+                const empty = document.getElementById('glEmpty');
+                if (empty) empty.style.display = visibleCount === 0 ? 'block' : 'none';
+            });
+        });
+
+        // ---- GLightbox ----
+        if (window.GLightbox) {
+            GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+        }
+    });
+    </script>
 
 </body>
 
