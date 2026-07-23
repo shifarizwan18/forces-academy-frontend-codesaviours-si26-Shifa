@@ -16,6 +16,12 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <!-- If JS fails to load for any reason, cards must still be visible -->
+    <noscript>
+        <style>.fa-stat-card{ opacity:1 !important; transform:none !important; }</style>
+    </noscript>
 
 </head>
 
@@ -176,6 +182,169 @@
     </section>
     <!-- ================= HERO SECTION END ================= -->
 
+    <!-- ================= STATS SECTION START ================= -->
+    <section class="fa-stats" id="stats">
+
+        <div class="container">
+
+            <div class="fa-stats-head">
+                <span class="fa-stats-eyebrow">Service Record</span>
+                <h2>Numbers That <em>Define Us</em></h2>
+                <p>A decade and a half of turning candidates into commissioned officers.</p>
+            </div>
+
+            <div class="fa-stats-grid">
+
+                <div class="fa-stat-card">
+                    <div class="fa-stat-icon"><i class="bi bi-people-fill"></i></div>
+                    <div class="fa-stat-number" data-target="5000" data-decimals="0">0<span class="fa-stat-suffix">+</span></div>
+                    <div class="fa-stat-rule"></div>
+                    <div class="fa-stat-label">Students Trained</div>
+                </div>
+
+                <div class="fa-stat-card">
+                    <div class="fa-stat-icon"><i class="bi bi-award-fill"></i></div>
+                    <div class="fa-stat-number" data-target="15" data-decimals="0">0<span class="fa-stat-suffix">+</span></div>
+                    <div class="fa-stat-rule"></div>
+                    <div class="fa-stat-label">Years Of Excellence</div>
+                </div>
+
+                <div class="fa-stat-card">
+                    <div class="fa-stat-icon"><i class="bi bi-journal-bookmark-fill"></i></div>
+                    <div class="fa-stat-number" data-target="8" data-decimals="0">0<span class="fa-stat-suffix">+</span></div>
+                    <div class="fa-stat-rule"></div>
+                    <div class="fa-stat-label">Courses Offered</div>
+                </div>
+
+                <div class="fa-stat-card">
+                    <div class="fa-stat-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                    <div class="fa-stat-number" data-target="92" data-decimals="0">0<span class="fa-stat-suffix">%</span></div>
+                    <div class="fa-stat-rule"></div>
+                    <div class="fa-stat-label">Success Rate</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ================= STATS SECTION END ================= -->
+
+    <!-- ================= TESTIMONIALS SECTION START ================= -->
+    <section class="fa-testimonials" id="testimonials">
+
+        <div class="container">
+
+            <div class="fa-testi-head">
+                <span class="fa-stats-eyebrow">Voices From The Ranks</span>
+                <h2>What Our <em>Cadets Say</em></h2>
+                <p>Real words from candidates who trained here and made it through.</p>
+            </div>
+
+            <div id="faTestiCarousel" class="carousel slide fa-testi-carousel" data-bs-ride="carousel" data-bs-interval="6000" data-bs-pause="false">
+
+                <!-- Indicators -->
+                <div class="carousel-indicators fa-testi-indicators">
+                    <button type="button" data-bs-target="#faTestiCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonial 1"></button>
+                    <button type="button" data-bs-target="#faTestiCarousel" data-bs-slide-to="1" aria-label="Testimonial 2"></button>
+                    <button type="button" data-bs-target="#faTestiCarousel" data-bs-slide-to="2" aria-label="Testimonial 3"></button>
+                    <button type="button" data-bs-target="#faTestiCarousel" data-bs-slide-to="3" aria-label="Testimonial 4"></button>
+                </div>
+
+                <!-- Slides -->
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="fa-testi-card">
+                            <i class="bi bi-quote fa-testi-quote-icon"></i>
+                            <p class="fa-testi-text">
+                                Forces Academy's ISSB coaching completely changed how I approached
+                                the selection process. The mock interviews and group task
+                                sessions gave me the confidence I needed on the actual day.
+                            </p>
+                            <div class="fa-testi-person">
+                                <div class="fa-testi-avatar">AH</div>
+                                <div class="fa-testi-info">
+                                    <h5>Ahmed Hassan</h5>
+                                    <span>PMA Long Course, Class of 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="fa-testi-card">
+                            <i class="bi bi-quote fa-testi-quote-icon"></i>
+                            <p class="fa-testi-text">
+                                The physical training schedule here is tough but it's exactly
+                                what the selection board expects. My instructors pushed me
+                                further than I thought I could go, and it paid off.
+                            </p>
+                            <div class="fa-testi-person">
+                                <div class="fa-testi-avatar">SF</div>
+                                <div class="fa-testi-info">
+                                    <h5>Sara Fatima</h5>
+                                    <span>Naval Academy Aspirant, 2024 Batch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="fa-testi-card">
+                            <i class="bi bi-quote fa-testi-quote-icon"></i>
+                            <p class="fa-testi-text">
+                                What stood out most was the academic coaching. Concepts I'd
+                                struggled with for years finally clicked because the teachers
+                                actually took the time to explain the "why" behind everything.
+                            </p>
+                            <div class="fa-testi-person">
+                                <div class="fa-testi-avatar">BR</div>
+                                <div class="fa-testi-info">
+                                    <h5>Bilal Raza</h5>
+                                    <span>PAF Cadet College, Class of 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="fa-testi-card">
+                            <i class="bi bi-quote fa-testi-quote-icon"></i>
+                            <p class="fa-testi-text">
+                                From the psych tests to the final interview panel, every stage
+                                felt familiar because we had already practiced it here dozens
+                                of times. That preparation made all the difference.
+                            </p>
+                            <div class="fa-testi-person">
+                                <div class="fa-testi-avatar">MZ</div>
+                                <div class="fa-testi-info">
+                                    <h5>Mahnoor Zafar</h5>
+                                    <span>PMA Long Course, Class of 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Manual controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#faTestiCarousel" data-bs-slide="prev">
+                    <span class="fa-testi-arrow"><i class="bi bi-chevron-left"></i></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#faTestiCarousel" data-bs-slide="next">
+                    <span class="fa-testi-arrow"><i class="bi bi-chevron-right"></i></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ================= TESTIMONIALS SECTION END ================= -->
+
     <!-- ================= FOOTER START ================= -->
     <footer class="fa-footer">
 
@@ -265,8 +434,17 @@
     </footer>
     <!-- ================= FOOTER END ================= -->
 
+    <!-- ================= BACK TO TOP BUTTON ================= -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" type="button">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    <!-- ================= BACK TO TOP BUTTON END ================= -->
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Stats Counter JS -->
+    <script src="js/main.js"></script>
 
 </body>
 
