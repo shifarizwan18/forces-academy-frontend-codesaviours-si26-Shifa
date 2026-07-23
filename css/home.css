@@ -1,0 +1,550 @@
+/* ==========================================================
+   STATS SECTION — "Service Record"
+   Uses the same design tokens as style.css (--forest, --gold, etc.)
+   This file only needs style.css loaded before it for the
+   CSS variables to resolve — no tokens are redefined here.
+========================================================== */
+
+.fa-stats{
+    position:relative;
+    background:var(--forest-dark);
+    padding:80px 0 90px;
+    overflow:hidden;
+    border-top:1px solid rgba(255,213,79,.15);
+}
+
+.fa-stats::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(rgba(255,213,79,.06) 1px, transparent 1px);
+    background-size:26px 26px;
+    pointer-events:none;
+}
+
+.fa-stats .container{
+    position:relative;
+    z-index:1;
+}
+
+/* ---------- Section heading ---------- */
+
+.fa-stats-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 56px;
+}
+
+.fa-stats-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Oswald',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold);
+    background:rgba(255,213,79,.1);
+    border:1px solid rgba(255,213,79,.35);
+    border-radius:50px;
+    padding:7px 16px;
+    margin-bottom:18px;
+}
+
+.fa-stats-head h2{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    letter-spacing:.5px;
+    font-size:clamp(1.7rem,4vw,2.4rem);
+    color:var(--cream);
+    margin-bottom:12px;
+}
+
+.fa-stats-head h2 em{
+    font-style:normal;
+    color:var(--gold);
+}
+
+.fa-stats-head p{
+    font-weight:300;
+    font-size:.98rem;
+    color:rgba(245,242,234,.65);
+}
+
+/* ---------- Stat grid ---------- */
+
+.fa-stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:26px;
+}
+
+.fa-stat-card{
+    position:relative;
+    background:var(--cream);
+    border-radius:8px;
+    padding:30px 20px 26px;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+    /* Visible by default — never depends on JS to become visible.
+       The entrance animation below is a bonus enhancement, not
+       a requirement for the card to show up. */
+    opacity:1;
+    animation:fa-stat-in .6s ease both;
+}
+
+@keyframes fa-stat-in{
+    from{ opacity:0; transform:translateY(28px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+.fa-stat-card:nth-child(1){ animation-delay:0s; }
+.fa-stat-card:nth-child(2){ animation-delay:.12s; }
+.fa-stat-card:nth-child(3){ animation-delay:.24s; }
+.fa-stat-card:nth-child(4){ animation-delay:.36s; }
+
+/* stamped corner, echoing the hero clipboard's "SHORTLISTED" stamp */
+.fa-stat-card::after{
+    content:"";
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--forest);
+    opacity:.35;
+}
+
+.fa-stat-card::before{
+    content:"";
+    position:absolute;
+    inset:6px;
+    border:1px dashed rgba(11,93,59,.25);
+    border-radius:5px;
+    pointer-events:none;
+}
+
+.fa-stat-icon{
+    width:52px;
+    height:52px;
+    margin:0 auto 16px;
+    border-radius:50%;
+    background:var(--forest);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    color:var(--gold);
+    border:2px solid var(--gold);
+}
+
+.fa-stat-number{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:clamp(2.1rem,4.5vw,2.7rem);
+    color:var(--forest);
+    line-height:1;
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:2px;
+}
+
+.fa-stat-suffix{
+    font-size:.55em;
+    font-weight:600;
+    color:var(--forest);
+}
+
+.fa-stat-label{
+    margin-top:10px;
+    font-family:'Oswald',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#5c5a4d;
+}
+
+.fa-stat-rule{
+    width:34px;
+    height:2px;
+    background:var(--gold);
+    margin:12px auto 0;
+    border-radius:2px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:991px){
+    .fa-stats{ padding:64px 0 70px; }
+    .fa-stats-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+    .fa-stats-head{ margin-bottom:44px; }
+}
+
+@media(max-width:575px){
+    .fa-stats{ padding:52px 0 56px; }
+    .fa-stats-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+    .fa-stat-card{ padding:26px 18px 22px; }
+    .fa-stats-head{ margin-bottom:36px; padding:0 1rem; }
+}
+
+@media(prefers-reduced-motion: reduce){
+    .fa-stat-card{
+        transition:none !important;
+        opacity:1 !important;
+        transform:none !important;
+    }
+}
+
+/* ==========================================================
+   TESTIMONIALS SECTION — "Voices From The Ranks"
+========================================================== */
+
+.fa-testimonials{
+    position:relative;
+    background:var(--forest);
+    padding:90px 0 100px;
+    overflow:hidden;
+}
+
+.fa-testimonials::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(rgba(255,213,79,.08) 1px, transparent 1px);
+    background-size:26px 26px;
+    pointer-events:none;
+}
+
+.fa-testimonials .container{
+    position:relative;
+    z-index:1;
+}
+
+.fa-testi-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 50px;
+}
+
+.fa-testi-head h2{
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    letter-spacing:.5px;
+    font-size:clamp(1.7rem,4vw,2.4rem);
+    color:var(--cream);
+    margin:18px 0 12px;
+}
+
+.fa-testi-head h2 em{
+    font-style:normal;
+    color:var(--gold);
+}
+
+.fa-testi-head p{
+    font-weight:300;
+    font-size:.98rem;
+    color:rgba(245,242,234,.65);
+}
+
+/* ---------- Carousel shell ---------- */
+
+.fa-testi-carousel{
+    max-width:760px;
+    margin:0 auto;
+}
+
+.fa-testi-card{
+    position:relative;
+    background:var(--cream);
+    border-radius:12px;
+    padding:48px clamp(24px,6vw,64px) 38px;
+    text-align:center;
+    box-shadow:0 25px 50px rgba(0,0,0,.35);
+    min-height:280px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.fa-testi-quote-icon{
+    font-size:34px;
+    color:var(--gold);
+    -webkit-text-stroke:1px var(--forest);
+    margin-bottom:14px;
+}
+
+.fa-testi-text{
+    font-size:1rem;
+    line-height:1.75;
+    color:#4b4a3f;
+    font-weight:400;
+    max-width:38rem;
+    margin-bottom:26px;
+}
+
+.fa-testi-person{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.fa-testi-avatar{
+    flex-shrink:0;
+    width:54px;
+    height:54px;
+    border-radius:50%;
+    background:var(--forest);
+    color:var(--gold);
+    border:2px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:16px;
+    letter-spacing:.5px;
+}
+
+.fa-testi-info{ text-align:left; }
+
+.fa-testi-info h5{
+    font-family:'Oswald',sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:var(--forest);
+    letter-spacing:.3px;
+    margin:0;
+}
+
+.fa-testi-info span{
+    display:block;
+    font-size:12px;
+    color:#8a8365;
+    letter-spacing:.3px;
+    margin-top:2px;
+}
+
+/* ---------- Indicators (dots) ---------- */
+
+.fa-testi-indicators{
+    position:static;
+    margin:0 0 26px;
+}
+
+.fa-testi-indicators [data-bs-target]{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background-color:rgba(245,242,234,.35);
+    border:none;
+    opacity:1;
+    text-indent:-9999px;
+    margin:0 5px;
+    transition:.3s;
+}
+
+.fa-testi-indicators .active{
+    background-color:var(--gold);
+    width:24px;
+    border-radius:5px;
+}
+
+/* ---------- Prev / next controls ---------- */
+
+.fa-testi-carousel .carousel-control-prev,
+.fa-testi-carousel .carousel-control-next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:auto;
+    opacity:1;
+}
+
+.fa-testi-carousel .carousel-control-prev{ left:-64px; }
+.fa-testi-carousel .carousel-control-next{ right:-64px; }
+
+.fa-testi-arrow{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:var(--cream);
+    color:var(--forest);
+    font-size:18px;
+    border:2px solid var(--gold);
+    transition:.3s;
+}
+
+.fa-testi-carousel .carousel-control-prev:hover .fa-testi-arrow,
+.fa-testi-carousel .carousel-control-next:hover .fa-testi-arrow{
+    background:var(--gold);
+    color:var(--forest-dark);
+    transform:scale(1.08);
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:991px){
+    .fa-testimonials{ padding:70px 0 76px; }
+
+    .fa-testi-carousel .carousel-control-prev{ left:-8px; }
+    .fa-testi-carousel .carousel-control-next{ right:-8px; }
+
+    .fa-testi-arrow{ width:40px; height:40px; font-size:16px; }
+
+    .fa-testi-card{ padding:44px 20px 32px; }
+}
+
+@media(max-width:575px){
+    .fa-testimonials{ padding:56px 0 64px; }
+
+    .fa-testi-head{ margin-bottom:38px; padding:0 1rem; }
+
+    .fa-testi-card{
+        min-height:320px;
+        padding:40px 18px 28px;
+        border-radius:10px;
+    }
+
+    .fa-testi-text{ font-size:.92rem; }
+
+    .fa-testi-person{ flex-direction:column; gap:10px; text-align:center; }
+    .fa-testi-info{ text-align:center; }
+
+    .fa-testi-carousel .carousel-control-prev,
+    .fa-testi-carousel .carousel-control-next{
+        top:auto;
+        bottom:-56px;
+        transform:none;
+    }
+    .fa-testi-carousel .carousel-control-prev{ left:calc(50% - 56px); }
+    .fa-testi-carousel .carousel-control-next{ right:calc(50% - 56px); }
+    .fa-testi-carousel{ margin-bottom:56px; }
+}
+
+@media(prefers-reduced-motion: reduce){
+    .fa-testi-carousel .carousel-item{ transition:none !important; }
+}
+
+/* ==========================================================
+   SMOOTH SCROLL — all in-page anchor links (nav, footer, etc.)
+   NOTE: ideally lives in style.css (global), added here since
+   that's the file we have access to for this page.
+========================================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Respect users who've asked for reduced motion */
+@media(prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+}
+
+/* ==========================================================
+   BACK TO TOP BUTTON
+   Hidden by default, shown via JS (.show class) once the user
+   has scrolled down 300px. Styled to match the forest/gold
+   theme used across the stats & testimonials sections.
+========================================================== */
+
+.back-to-top{
+    position:fixed;
+    right:26px;
+    bottom:26px;
+    z-index:1000;
+
+    width:50px;
+    height:50px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--forest);
+    color:var(--gold);
+    border:2px solid var(--gold);
+    font-size:20px;
+    line-height:1;
+    cursor:pointer;
+
+    box-shadow:0 10px 26px rgba(0,0,0,.3);
+
+    /* Hidden state */
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(18px) scale(.9);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease,
+        visibility .35s ease,
+        background-color .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
+}
+
+.back-to-top.show{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0) scale(1);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible{
+    background:var(--gold);
+    color:var(--forest-dark);
+    box-shadow:0 14px 32px rgba(0,0,0,.4);
+    transform:translateY(-4px) scale(1.05);
+}
+
+.back-to-top:active{
+    transform:translateY(-1px) scale(.94);
+}
+
+.back-to-top:focus-visible{
+    outline:2px solid var(--cream);
+    outline-offset:3px;
+}
+
+.back-to-top i{
+    transition:transform .25s ease;
+}
+
+.back-to-top:hover i{
+    transform:translateY(-2px);
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:575px){
+    .back-to-top{
+        width:44px;
+        height:44px;
+        font-size:17px;
+        right:16px;
+        bottom:16px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce){
+    .back-to-top{ transition:opacity .2s linear !important; transform:none !important; }
+    .back-to-top:hover,
+    .back-to-top:active{ transform:none !important; }
+}
