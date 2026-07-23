@@ -1,5 +1,5 @@
 /* ==========================================================
-   STATS SECTION — "Service Record"
+   STATS SECTION — "Service Records"
    Uses the same design tokens as style.css (--forest, --gold, etc.)
    This file only needs style.css loaded before it for the
    CSS variables to resolve — no tokens are redefined here.
