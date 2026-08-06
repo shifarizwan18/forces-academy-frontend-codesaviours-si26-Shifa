@@ -1,0 +1,241 @@
+/* DARK MODE — Forces Academy Faisalabad. Load AFTER style.css & home.css. Scoped under html.dark-mode so light mode stays untouched.
+   Strategy: redefine neutral "surface" tokens (--dm-*) and reuse them wherever light mode used #fff/var(--cream). Brand green/gold accents stay same in both modes. */
+
+:root{ --dm-bg:#0e1512; --dm-surface:#16211c; --dm-surface-2:#1c2921; --dm-border:rgba(255,213,79,.16); --dm-text:#eef1ec; --dm-text-muted:rgba(238,241,236,.68); --dm-text-dim:rgba(238,241,236,.5); }
+
+/* Crossfade on theme switch. EXCLUDED here: .ad-fee-table-wrap, .ad-step-item, .ad-doc-list .list-group-item, .fa-stat-card — they have their own scroll-in reveal (opacity/transform) transition defined in home.css; `transition` is a shorthand, so listing them here would silently wipe that reveal. They get a combined rule below instead. */
+body,#mainNav,.fa-footer,.ab-record,.ab-why-card,.ab-mv-card,.crs-card,.crs-track-card,.ad-elig-card,.fa-testi-card,.rs-result-card,.rs-filter-bar,.rs-table-wrap,.rs-note{ transition:background-color .35s ease,color .35s ease,border-color .35s ease; }
+
+/* Reveal-bearing elements: combine each element's own scroll-in reveal transition with the dark-mode color-swap transition so neither overwrites the other. */
+.ad-fee-table-wrap,.ad-step-item,.ad-doc-list .list-group-item{ transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1),background-color .35s ease,color .35s ease,border-color .35s ease; }
+.fa-stat-card{ transition:opacity .6s ease,transform .6s ease,background-color .35s ease,color .35s ease,border-color .35s ease; }
+
+/* THEME TOGGLE BUTTON */
+.theme-toggle-btn{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1.5px solid rgba(255,213,79,.4); background:rgba(255,213,79,.08); color:var(--gold); font-size:17px; margin-left:18px; cursor:pointer; transition:background .3s ease,transform .3s ease,border-color .3s ease; }
+.theme-toggle-btn:hover{ background:rgba(255,213,79,.18); transform:translateY(-2px) rotate(8deg); }
+.theme-toggle-btn:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+/* Light mode: show moon (switch to dark). Dark mode: show sun (switch to light). */
+.theme-toggle-btn .theme-icon-sun{ display:none; } .theme-toggle-btn .theme-icon-moon{ display:inline-block; }
+html.dark-mode .theme-toggle-btn .theme-icon-sun{ display:inline-block; } html.dark-mode .theme-toggle-btn .theme-icon-moon{ display:none; }
+@media(max-width:991px){ .theme-toggle-btn{ margin:14px 0 0; } }
+
+/* BASE */
+html.dark-mode,html.dark-mode body{ background:var(--dm-bg); }
+html.dark-mode #mainNav{ background:#0a1210; border-bottom-color:rgba(255,213,79,.35); }
+
+/* HOME — HERO / STATS / TESTIMONIALS (hero is already a dark forest overlay, no change needed there) */
+html.dark-mode .fa2-photo-fade{ background:linear-gradient(100deg,rgba(2,20,12,.95) 0%,rgba(2,20,12,.7) 42%,rgba(2,20,12,.45) 68%,rgba(2,20,12,.65) 100%),linear-gradient(180deg,rgba(2,20,12,.3) 0%,rgba(2,20,12,.4) 60%,rgba(2,20,12,.92) 100%); }
+html.dark-mode .fa2-clipboard{ background:var(--dm-surface); box-shadow:0 25px 50px rgba(0,0,0,.6); }
+html.dark-mode .fa2-clipboard-head{ border-bottom-color:rgba(255,213,79,.2); }
+html.dark-mode .fa2-clipboard-head h4{ color:var(--gold); }
+html.dark-mode .fa2-file-id{ color:var(--dm-text-dim); }
+html.dark-mode .fa2-checklist li{ color:var(--dm-text-muted); }
+html.dark-mode .fa2-chk,html.dark-mode .fa2-chk::after{ border-color:var(--gold); }
+html.dark-mode .fa2-progress{ background:rgba(255,255,255,.08); }
+html.dark-mode .fa2-progress-label{ color:var(--dm-text-dim); }
+html.dark-mode .fa2-stamp{ background:rgba(22,33,28,.95); color:var(--gold); border-color:var(--gold); }
+html.dark-mode .fa2-ticker{ background:#0a1210; }
+
+/* Stats + testimonials: covers light "card on cream" pattern used elsewhere, plus a light/white fallback */
+html.dark-mode .fa-stats,html.dark-mode .fa-testimonials{ background:var(--dm-bg); }
+html.dark-mode .fa-stats-eyebrow{ color:var(--gold); }
+html.dark-mode .fa-stats-head h2,html.dark-mode .fa-testi-head h2{ color:var(--dm-text); }
+html.dark-mode .fa-stats-head p,html.dark-mode .fa-testi-head p{ color:var(--dm-text-muted); }
+html.dark-mode .fa-stat-card,html.dark-mode .fa-testi-card{ background:var(--dm-surface); border:1px solid var(--dm-border); color:var(--dm-text); box-shadow:0 12px 28px rgba(0,0,0,.35); }
+html.dark-mode .fa-stat-label{ color:var(--dm-text-muted); }
+html.dark-mode .fa-stat-number{ color:var(--dm-text); }
+html.dark-mode .fa-testi-text{ color:var(--dm-text-muted); }
+html.dark-mode .fa-testi-info h5{ color:var(--dm-text); }
+html.dark-mode .fa-testi-info span{ color:var(--khaki); }
+
+/* FOOTER */
+html.dark-mode .fa-footer{ background:#0a1210; }
+html.dark-mode .fa-footer-about,html.dark-mode .fa-footer-social-text{ color:rgba(238,241,236,.55); }
+html.dark-mode .fa-footer-links a,html.dark-mode .fa-footer-contact li{ color:rgba(238,241,236,.68); }
+html.dark-mode .fa-footer-bottom p{ color:rgba(238,241,236,.45); }
+
+/* BACK TO TOP */
+html.dark-mode .back-to-top{ background:var(--dm-surface); border:1px solid var(--dm-border); color:var(--gold); }
+
+/* ABOUT PAGE */
+html.dark-mode .ab-overview,html.dark-mode .ab-why{ background:var(--dm-bg); }
+html.dark-mode .ab-tag{ color:var(--gold); background:rgba(255,213,79,.1); border-color:rgba(255,213,79,.3); }
+html.dark-mode .ab-heading{ color:var(--dm-text); }
+html.dark-mode .ab-body{ color:var(--dm-text-muted); }
+html.dark-mode .ab-record{ background:var(--dm-surface); box-shadow:0 20px 45px rgba(0,0,0,.5); }
+html.dark-mode .ab-record-head{ border-bottom-color:rgba(255,213,79,.18); }
+html.dark-mode .ab-record-head h4{ color:var(--gold); }
+html.dark-mode .ab-record-id{ color:var(--dm-text-dim); }
+html.dark-mode .ab-record-list li{ border-bottom-color:rgba(255,255,255,.06); }
+html.dark-mode .ab-record-label{ color:var(--dm-text-dim); }
+html.dark-mode .ab-record-value{ color:var(--dm-text); }
+html.dark-mode .ab-record-stamp{ background:var(--dm-surface); }
+html.dark-mode .ab-why-card{ background:var(--dm-surface); border-color:var(--dm-border); }
+html.dark-mode .ab-why-card .card-title{ color:var(--dm-text); }
+html.dark-mode .ab-why-card .card-text{ color:var(--dm-text-muted); }
+/* Mission/Vision + Leadership already sit on dark forest bg in light mode — minor contrast tuning only */
+html.dark-mode .ab-mv-card,html.dark-mode .ab-leader-front,html.dark-mode .ab-leader-back{ background:rgba(255,255,255,.03); }
+
+/* COURSES PAGE */
+html.dark-mode .crs-courses{ background:var(--dm-bg); }
+html.dark-mode .crs-card{ background:var(--dm-surface); border-color:var(--dm-border); box-shadow:0 6px 18px rgba(0,0,0,.3); }
+html.dark-mode .crs-card-title{ color:var(--dm-text); }
+html.dark-mode .crs-card-text{ color:var(--dm-text-muted); }
+html.dark-mode .crs-card-meta li{ color:var(--dm-text-muted); }
+html.dark-mode .crs-card-meta li strong{ color:var(--dm-text); }
+html.dark-mode .crs-track-card{ background:var(--dm-surface); box-shadow:0 25px 55px rgba(0,0,0,.55); }
+html.dark-mode .crs-track-tabs{ background:rgba(255,255,255,.05); }
+html.dark-mode .crs-track-tab{ color:var(--dm-text-muted); }
+html.dark-mode .crs-track-head{ border-bottom-color:rgba(255,213,79,.18); }
+html.dark-mode .crs-track-head h4{ color:var(--gold); }
+html.dark-mode .crs-track-count{ color:var(--dm-text-dim); }
+html.dark-mode .crs-track-bullets li{ color:var(--dm-text); }
+html.dark-mode .crs-track-progress{ background:rgba(255,255,255,.08); }
+
+/* ADMISSIONS PAGE */
+html.dark-mode .ad-hero-fade{ background:linear-gradient(to bottom,transparent 60%,var(--dm-bg) 100%); }
+html.dark-mode .ad-section{ background:var(--dm-bg); }
+html.dark-mode .ad-tag{ color:var(--gold); background:rgba(255,213,79,.1); border-color:rgba(255,213,79,.3); }
+html.dark-mode .ad-heading{ color:var(--dm-text); }
+html.dark-mode .ad-section-sub,html.dark-mode .ad-body{ color:var(--dm-text-muted); }
+html.dark-mode .ad-body-muted{ color:var(--dm-text-dim); }
+html.dark-mode .ad-step-item{ background:var(--dm-surface); border-color:var(--dm-border); box-shadow:0 4px 16px rgba(0,0,0,.35); }
+html.dark-mode .ad-step-body h5{ color:var(--dm-text); }
+html.dark-mode .ad-step-body p{ color:var(--dm-text-muted); }
+html.dark-mode .ad-step-icon{ color:rgba(255,255,255,.1); }
+html.dark-mode .ad-doc-list .list-group-item{ background:var(--dm-surface); border-color:var(--dm-border); color:var(--dm-text); }
+html.dark-mode .ad-fees{ background:var(--dm-bg); }
+html.dark-mode .ad-fee-table-wrap{ background:var(--dm-surface-2); border-color:var(--dm-border); }
+html.dark-mode .ad-fee-table{ background-color:transparent; color:var(--dm-text); }
+html.dark-mode .ad-fee-table tbody td{ color:var(--dm-text) !important; background-color:transparent !important; border-color:rgba(255,255,255,.1) !important; }
+html.dark-mode .ad-fee-table tbody td:first-child{ color:var(--gold) !important; }
+html.dark-mode .ad-fee-table tbody tr:hover td{ background:rgba(255,213,79,.08) !important; }
+html.dark-mode .ad-fee-note{ color:var(--dm-text-dim); }
+
+/* RESULTS PAGE — Hero / merit board */
+html.dark-mode .rs-eyebrow{ color:var(--gold); background:rgba(255,213,79,.1); border-color:rgba(255,213,79,.3); }
+html.dark-mode .rs-hero-copy h1{ color:var(--dm-text); }
+html.dark-mode .rs-hero-copy h1 span{ color:var(--gold); }
+html.dark-mode .rs-hero-copy p{ color:var(--dm-text-muted); }
+html.dark-mode .rs-cta{ background:var(--gold); color:#0a1210; }
+html.dark-mode .rs-cta-ghost{ background:transparent; border-color:rgba(255,213,79,.4); color:var(--dm-text); }
+html.dark-mode .rs-cta-ghost:hover{ background:rgba(255,213,79,.1); }
+html.dark-mode .rs-hero-stats{ border-top-color:rgba(255,213,79,.14); }
+html.dark-mode .rs-stat strong{ color:var(--dm-text); }
+html.dark-mode .rs-stat span{ color:var(--dm-text-dim); }
+
+/* Result preview flip-card */
+html.dark-mode .rs-result-card{ background:var(--dm-surface); box-shadow:0 25px 55px rgba(0,0,0,.55); }
+html.dark-mode .rs-card-face{ background:var(--dm-surface); color:var(--dm-text); }
+html.dark-mode .rs-card-seal{ color:var(--gold); background:rgba(255,213,79,.1); }
+html.dark-mode .rs-card-eyebrow{ color:var(--gold); }
+html.dark-mode .rs-card-front h3{ color:var(--dm-text); }
+html.dark-mode .rs-card-front p{ color:var(--dm-text-muted); }
+html.dark-mode .rs-card-input-row .form-control{ background:var(--dm-surface-2); border-color:rgba(255,213,79,.2); color:var(--dm-text); }
+html.dark-mode .rs-card-input-row .form-control::placeholder{ color:var(--dm-text-dim); }
+html.dark-mode .rs-card-input-row .form-control:focus{ background:var(--dm-surface-2); border-color:var(--gold); color:var(--dm-text); box-shadow:0 0 0 .2rem rgba(255,213,79,.15); }
+html.dark-mode .rs-card-btn{ background:var(--gold); color:#0a1210; }
+html.dark-mode .rs-card-chips span{ color:var(--dm-text-dim); }
+html.dark-mode .rs-chip{ background:var(--dm-surface-2); border-color:rgba(255,213,79,.2); color:var(--dm-text-muted); }
+html.dark-mode .rs-chip:hover{ background:rgba(255,213,79,.12); color:var(--dm-text); border-color:rgba(255,213,79,.4); }
+html.dark-mode .rs-card-back-head{ border-bottom-color:rgba(255,213,79,.18); }
+html.dark-mode .rs-card-back-tag{ color:var(--gold); }
+html.dark-mode .rs-card-reset{ color:var(--dm-text-muted); background:rgba(255,255,255,.05); }
+html.dark-mode .rs-card-reset:hover{ color:var(--gold); }
+html.dark-mode .rs-card-roll{ color:var(--dm-text-dim); }
+html.dark-mode .rs-card-name{ color:var(--dm-text); }
+html.dark-mode .rs-card-meta{ color:var(--dm-text-muted); }
+html.dark-mode .rs-card-gradebox{ background:var(--dm-surface-2); border-color:rgba(255,255,255,.06); }
+html.dark-mode .rs-card-marks-label{ color:var(--dm-text-dim); }
+html.dark-mode .rs-card-gradebox strong{ color:var(--dm-text); }
+html.dark-mode .rs-card-footnote{ color:var(--dm-text-dim); }
+
+/* Filter bar */
+html.dark-mode .rs-filter-section{ background:var(--dm-bg); }
+html.dark-mode .rs-filter-bar{ background:var(--dm-surface); border-color:var(--dm-border); box-shadow:0 12px 28px rgba(0,0,0,.35); }
+html.dark-mode .rs-filter-field label{ color:var(--dm-text-dim); }
+html.dark-mode .rs-select{ background-color:var(--dm-surface-2); border-color:rgba(255,213,79,.2); color:var(--dm-text); }
+html.dark-mode .rs-select:focus{ border-color:var(--gold); box-shadow:0 0 0 .2rem rgba(255,213,79,.15); }
+html.dark-mode .rs-filter-reset{ background:transparent; border-color:rgba(255,213,79,.25); color:var(--dm-text-muted); }
+html.dark-mode .rs-filter-reset:hover{ background:rgba(255,213,79,.1); color:var(--gold); }
+html.dark-mode .rs-filter-status{ color:var(--dm-text-dim); }
+html.dark-mode .rs-filter-status.rs-updated{ color:var(--gold); }
+
+/* Results table */
+html.dark-mode .rs-table-section{ background:var(--dm-bg); }
+html.dark-mode .rs-tag{ color:var(--gold); background:rgba(255,213,79,.1); border-color:rgba(255,213,79,.3); }
+html.dark-mode .rs-heading{ color:var(--dm-text); }
+html.dark-mode .rs-section-sub{ color:var(--dm-text-muted); }
+html.dark-mode .rs-table-wrap{ background:var(--dm-surface-2); border-color:var(--dm-border); box-shadow:0 12px 28px rgba(0,0,0,.35); }
+html.dark-mode .rs-table{ background-color:transparent; color:var(--dm-text); }
+html.dark-mode .rs-table thead th{ background-color:rgba(255,255,255,.04) !important; color:var(--gold) !important; border-color:rgba(255,255,255,.1) !important; }
+html.dark-mode .rs-table tbody td{ color:var(--dm-text) !important; background-color:transparent !important; border-color:rgba(255,255,255,.08) !important; }
+html.dark-mode .rs-table tbody tr:hover td{ background:rgba(255,213,79,.06) !important; }
+html.dark-mode .rs-roll{ color:var(--gold) !important; }
+html.dark-mode .rs-student{ color:var(--dm-text) !important; }
+
+/* Grade badges keep brand colours, with a touch more contrast on the darker table bg */
+html.dark-mode .rs-badge-Ap{ background:#2a6b3e; color:#eafff0; }
+html.dark-mode .rs-badge-A{ background:rgba(76,175,80,.22); color:#8ee39a; }
+html.dark-mode .rs-badge-B{ background:rgba(255,213,79,.18); color:#ffd54f; }
+html.dark-mode .rs-badge-C{ background:rgba(255,152,0,.18); color:#ffb74d; }
+html.dark-mode .rs-badge-F{ background:rgba(244,67,54,.18); color:#ef9a9a; }
+html.dark-mode .rs-no-results{ color:var(--dm-text-dim); }
+html.dark-mode .rs-note{ background:var(--dm-surface); border-color:var(--dm-border); color:var(--dm-text-muted); }
+html.dark-mode .rs-note strong{ color:var(--dm-text); }
+
+/* GALLERY PAGE — .gl-hero left untouched (already dark forest-green in light mode) */
+html.dark-mode .gl-main{ background:var(--dm-bg); }
+html.dark-mode .rs-section.pt-0{ background:var(--dm-bg) !important; }
+html.dark-mode .gl-filter-btn{ color:var(--dm-text-muted); border-color:rgba(255,213,79,.25); background:transparent; }
+html.dark-mode .gl-filter-btn:hover{ color:var(--gold); border-color:var(--gold); background:rgba(255,213,79,.08); }
+html.dark-mode .gl-filter-btn.active{ color:#0a1210 !important; background:var(--gold); border-color:var(--gold); }
+html.dark-mode .gl-card{ background:var(--dm-surface); box-shadow:0 12px 28px rgba(0,0,0,.4); }
+html.dark-mode .gl-card .gl-frame{ background:var(--dm-surface); }
+/* Category badge kept solid gold-on-dark (not faint tint) so it stays readable over any photo */
+html.dark-mode .gl-tag{ background:var(--gold); color:#0a1210; border-color:var(--gold); }
+html.dark-mode .gl-zoom{ background:rgba(10,18,16,.55); color:var(--gold); }
+html.dark-mode .gl-empty{ color:var(--dm-text-dim); }
+
+/* CONTACT PAGE — .ct-main/.ct-hero left untouched (already brand forest-dark). Only light alt-sections + phone mockup themed. */
+html.dark-mode .ct-section-light{ background:var(--dm-bg); }
+html.dark-mode .ct-section-light .ct-heading{ color:var(--dm-text); }
+html.dark-mode .ct-section-light .ct-section-sub{ color:var(--dm-text-muted); }
+html.dark-mode .ct-section-light .ct-form-card{ background:var(--dm-surface); border-color:var(--dm-border); box-shadow:0 16px 34px rgba(0,0,0,.4); }
+html.dark-mode .ct-section-light .ct-form-card h3{ color:var(--dm-text); }
+html.dark-mode .ct-section-light .ct-form-card > p{ color:var(--dm-text-muted); }
+html.dark-mode .ct-section-light .ct-field label{ color:var(--gold); }
+html.dark-mode .ct-section-light .ct-field .form-control,html.dark-mode .ct-section-light .ct-field .form-select{ background:var(--dm-surface-2); border-color:rgba(255,213,79,.25); color:var(--dm-text); }
+html.dark-mode .ct-section-light .ct-field .form-control::placeholder{ color:var(--dm-text-dim); }
+html.dark-mode .ct-section-light .ct-field .form-control:focus,html.dark-mode .ct-section-light .ct-field .form-select:focus{ background:var(--dm-surface-2); color:var(--dm-text); border-color:var(--gold); box-shadow:0 0 0 3px rgba(255,213,79,.15); }
+html.dark-mode .ct-section-light .ct-form-alert{ background:rgba(89,201,119,.1); border-color:rgba(89,201,119,.35); color:#bdf3cb; }
+html.dark-mode .ct-section-light .ct-form-alert i{ color:#59c977; }
+html.dark-mode .ct-section-light .ct-side-card{ background:var(--dm-surface); border-color:var(--dm-border); box-shadow:0 16px 34px rgba(0,0,0,.4); }
+html.dark-mode .ct-section-light .ct-side-card h4{ color:var(--gold); border-bottom-color:rgba(255,213,79,.2); }
+html.dark-mode .ct-section-light .ct-side-row{ color:var(--dm-text-muted); }
+html.dark-mode .ct-section-light .ct-side-row i{ color:var(--gold); }
+html.dark-mode .ct-section-light .ct-side-note{ color:var(--dm-text-dim); border-top-color:rgba(255,213,79,.15); }
+/* .ct-map-panel default stays brand forest green in both modes — only the light-section variant is themed */
+html.dark-mode .ct-section-light .ct-map-panel{ background:var(--dm-surface); border-color:var(--dm-border); box-shadow:0 16px 34px rgba(0,0,0,.4); }
+html.dark-mode .ct-section-light .ct-map-caption,html.dark-mode .ct-section-light .ct-map-caption a{ color:var(--gold); }
+
+/* Phone mockup screen */
+html.dark-mode .ct-phone-screen{ background:var(--dm-surface-2); }
+html.dark-mode .ct-phone-statusbar{ color:var(--dm-text); }
+html.dark-mode .ct-phone-app-heading strong{ color:var(--dm-text); }
+html.dark-mode .ct-phone-status-pill{ color:var(--dm-text-dim); }
+html.dark-mode .ct-phone-card{ background:rgba(255,213,79,.06); border-color:rgba(255,213,79,.18); }
+html.dark-mode .ct-phone-row{ color:var(--dm-text-muted); }
+html.dark-mode .ct-phone-row i{ color:var(--gold); }
+html.dark-mode .ct-phone-action{ background:var(--gold); color:#0a1210; }
+html.dark-mode .ct-phone-action:hover{ background:#fff3c8; }
+html.dark-mode .ct-phone-info{ border-top-color:rgba(255,255,255,.08); }
+html.dark-mode .ct-phone-info-row{ color:var(--dm-text-dim); }
+html.dark-mode .ct-phone-info-row i{ color:var(--gold); }
+html.dark-mode .ct-phone-dot{ background:rgba(255,255,255,.15); }
+html.dark-mode .ct-phone-dot.active{ background:var(--gold); }
+
+/* Respect prefers-reduced-motion for our own added transitions too */
+@media(prefers-reduced-motion:reduce){
+  body,#mainNav,.fa-footer,.ab-record,.ab-why-card,.ab-mv-card,.crs-card,.crs-track-card,.ad-step-item,.ad-doc-list .list-group-item,.ad-elig-card,.ad-fee-table-wrap,.fa-stat-card,.fa-testi-card,.rs-result-card,.rs-filter-bar,.rs-table-wrap,.rs-note,.theme-toggle-btn{ transition:none !important; }
+}
