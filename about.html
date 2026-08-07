@@ -4,7 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — Forces Academy Faisalabad</title>
+    <title>About Us — Forces Academy Faisalabad </title>
+
+    <!-- ===== Basic SEO Meta Tags ===== -->
+    <meta name="description" content="Forces Academy Faisalabad has trained future officers since 2010. Discover our mission, vision, experienced leadership team, and proven ISSB and PMA coaching.">
+    <meta name="keywords" content="Forces Academy Faisalabad, about Forces Academy, ISSB preparation Faisalabad, PMA Long Course coaching, military academy history, army academy leadership team, cadet training Faisalabad, Pakistan Armed Forces coaching, ISSB coaching mission vision">
+    <meta name="author" content="Forces Academy Faisalabad">
+    <link rel="canonical" href="https://forcesacademyfsd.edu.pk/about.html">
+
+    <!-- ===== Open Graph / Social Sharing Meta Tags ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Us — Forces Academy Faisalabad">
+    <meta property="og:description" content="Excellence in education since 2010 — Forces Academy Faisalabad builds leaders through discipline, character and academic rigor.">
+    <meta property="og:image" content="https://forcesacademyfsd.edu.pk/images/logo.png">
+    <meta property="og:url" content="https://forcesacademyfsd.edu.pk/about.html">
+    <meta property="og:site_name" content="Forces Academy Faisalabad">
+    <meta property="og:locale" content="en_PK">
+
+    <!-- ===== Twitter Card Meta Tags ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us — Forces Academy Faisalabad">
+    <meta name="twitter:description" content="Excellence in education since 2010 — Forces Academy Faisalabad builds leaders through discipline, character and academic rigor.">
+    <meta name="twitter:image" content="https://forcesacademyfsd.edu.pk/images/logo.png">
+
+    <!-- ===== Favicon (using existing logo) ===== -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -12,6 +37,22 @@
     <!-- ⚠️ Path check: agar yeh page kisi subfolder mein hai to "css/style.css"
          ki jagah "../css/style.css" karein -->
     <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+
+    <!-- Apply saved theme before first paint, so there's no flash of the wrong theme.
+         This tiny inline script MUST stay in <head>, before the stylesheets finish
+         loading, so the class is already on <html> by the time CSS paints. -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('fa-theme');
+                var wantsDark = saved ? saved === 'dark'
+                    : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (wantsDark) document.documentElement.classList.add('dark-mode');
+            } catch (e) { /* localStorage unavailable — default to light mode */ }
+        })();
+    </script>
 </head>
 
 <body>
@@ -20,7 +61,7 @@
         <div class="container">
 
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo.png" alt="Logo" class="logo">
+                <img src="images/logo.png" alt="Forces Academy Faisalabad official logo" class="logo">
                 <div class="logo-text ms-2">
                     <h4>FORCES ACADEMY</h4>
                     <span>FAISALABAD</span>
@@ -44,6 +85,12 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
+                <!-- Theme Toggle -->
+                <button type="button" class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="bi bi-moon-stars-fill theme-icon-moon"></i>
+                    <i class="bi bi-sun-fill theme-icon-sun"></i>
+                </button>
+
                 <a href="#" class="portal-btn">
                     <i class="bi bi-mortarboard-fill"></i>
                     Student Portal
@@ -55,7 +102,7 @@
 
     <!-- ================= HERO BANNER START (centered, no side card) ================= -->
     <header class="ab-hero">
-        <div class="ab-hero-photo"></div>
+        <div class="ab-hero-photo" role="img" aria-label="Forces Academy Faisalabad cadets during training"></div>
         <div class="ab-hero-fade"></div>
         <div class="ab-hero-fx"></div>
 
@@ -279,7 +326,7 @@
             <div class="row g-4 justify-content-center">
 
                 <!-- ⚠️ Placeholder avatars — swap the .ab-leader-photo-initials <span> for an
-                     <img src="images/staff/muzammil-tariq.jpg" alt="..."> once real staff photos are ready. -->
+                     <img src="images/staff/muzammil-tariq.jpg" alt="Mr. Muzammil Tariq, Director and Founder of Forces Academy Faisalabad"> once real staff photos are ready. -->
                 <div class="col-6 col-lg-3">
                     <div class="ab-leader-card ab-reveal" tabindex="0">
                         <div class="ab-leader-inner">
@@ -481,9 +528,15 @@
 
     </footer>
     <!-- ================= FOOTER END ================= -->
-
+       <button id="backToTop" class="back-to-top" aria-label="Back to top" type="button">
+        <i class="bi bi-arrow-up"></i>
+    </button>
     <!-- Bootstrap JS — is script ke bina toggle/collapse/carousel kaam nahi karega -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Dark Mode Toggle (+ stats counter / back-to-top, both skip themselves
+         automatically on pages that don't have those elements) -->
+    <script src="js/main.js"></script>
 
     <!-- Scroll-reveal: fades + slides ".ab-reveal" elements in as they enter view -->
     <script>
