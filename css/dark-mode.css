@@ -1,5 +1,5 @@
 /* DARK MODE — Forces Academy Faisalabad. Load AFTER style.css & home.css. Scoped under html.dark-mode so light mode stays untouched.
-   Strategy: redefine neutral "surface" tokens (--dm-*) and reuse them wherever light mode used #fff/var(--cream). Brand green/gold accents stay same in both modes. */
+   Strategy: redefine neutral "surface" tokens (--dm-*) and reuse them wherever light mode used #fff/var(--cream). Brand green/gold accents same in both modes. */
 
 :root{ --dm-bg:#0e1512; --dm-surface:#16211c; --dm-surface-2:#1c2921; --dm-border:rgba(255,213,79,.16); --dm-text:#eef1ec; --dm-text-muted:rgba(238,241,236,.68); --dm-text-dim:rgba(238,241,236,.5); }
 
