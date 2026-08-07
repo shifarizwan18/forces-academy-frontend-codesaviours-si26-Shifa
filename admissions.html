@@ -4,7 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admissions — Forces Academy Faisalabad</title>
+    <title>Admissions — Forces Academy Faisalabad | 2026 Batch</title>
+
+    <!-- ===== Basic SEO Meta Tags ===== -->
+    <meta name="description" content="Apply to Forces Academy Faisalabad's 2026 batch. See eligibility, required documents, fee structure and a simple 5-step admissions process. Seats limited.">
+    <meta name="keywords" content="Forces Academy admissions, ISSB academy admission Faisalabad, PMA Long Course eligibility, admission fee structure, how to apply Forces Academy, cadet academy documents required, 2026 batch admissions Faisalabad">
+    <meta name="author" content="Forces Academy Faisalabad">
+    <link rel="canonical" href="https://forcesacademyfsd.edu.pk/admissions.html">
+
+    <!-- ===== Open Graph / Social Sharing Meta Tags ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Admissions — Forces Academy Faisalabad">
+    <meta property="og:description" content="Admissions open for the 2026 batch. Five simple steps, clear eligibility criteria and a transparent fee structure — seats limited to 40 per batch.">
+    <meta property="og:image" content="https://forcesacademyfsd.edu.pk/images/logo.png">
+    <meta property="og:url" content="https://forcesacademyfsd.edu.pk/admissions.html">
+    <meta property="og:site_name" content="Forces Academy Faisalabad">
+    <meta property="og:locale" content="en_PK">
+
+    <!-- ===== Twitter Card Meta Tags ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Admissions — Forces Academy Faisalabad">
+    <meta name="twitter:description" content="Admissions open for the 2026 batch. Five simple steps, clear eligibility criteria and a transparent fee structure — seats limited to 40 per batch.">
+    <meta name="twitter:image" content="https://forcesacademyfsd.edu.pk/images/logo.png">
+
+    <!-- ===== Favicon (using existing logo) ===== -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -13,7 +38,22 @@
          ki jagah "../css/style.css" karein -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Admissions page ka apna CSS — style.css ke baad load karein -->
-    <link rel="stylesheet" href="css/admissions.css">
+   <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+
+    <!-- Apply saved theme before first paint, so there's no flash of the wrong theme.
+         This tiny inline script MUST stay in <head>, before the stylesheets finish
+         loading, so the class is already on <html> by the time CSS paints. -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('fa-theme');
+                var wantsDark = saved ? saved === 'dark'
+                    : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (wantsDark) document.documentElement.classList.add('dark-mode');
+            } catch (e) { /* localStorage unavailable — default to light mode */ }
+        })();
+    </script>
 
     <!-- Deep-link se aane par target fee row ko highlight karne ke liye -->
     <style>
@@ -34,7 +74,7 @@
         <div class="container">
 
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo.png" alt="Logo" class="logo">
+                <img src="images/logo.png" alt="Forces Academy Faisalabad official logo" class="logo">
                 <div class="logo-text ms-2">
                     <h4>FORCES ACADEMY</h4>
                     <span>FAISALABAD</span>
@@ -58,6 +98,12 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
 
+                <!-- Theme Toggle -->
+                <button type="button" class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="bi bi-moon-stars-fill theme-icon-moon"></i>
+                    <i class="bi bi-sun-fill theme-icon-sun"></i>
+                </button>
+
                 <a href="#" class="portal-btn">
                     <i class="bi bi-mortarboard-fill"></i>
                     Student Portal
@@ -69,7 +115,7 @@
 
     <!-- ================= HERO BANNER START ================= -->
     <header class="ad-hero">
-        <div class="ad-hero-photo"></div>
+        <div class="ad-hero-photo" role="img" aria-label="Forces Academy Faisalabad cadets during an admissions orientation"></div>
         <div class="ad-hero-fade"></div>
         <div class="ad-hero-fx"></div>
 
@@ -498,9 +544,15 @@
 
     </footer>
     <!-- ================= FOOTER END ================= -->
-
+<button id="backToTop" class="back-to-top" aria-label="Back to top" type="button">
+        <i class="bi bi-arrow-up"></i>
+    </button>
     <!-- Bootstrap JS — is script ke bina toggle/collapse/carousel kaam nahi karega -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Dark Mode Toggle (+ stats counter / back-to-top, both skip themselves
+         automatically on pages that don't have those elements) -->
+    <script src="js/main.js"></script>
 
     <!-- Scroll-reveal: .reveal elements ahista ahista fade/slide in hote hain jab
          woh viewport mein aate hain. Reduced-motion users ke liye CSS khud handle
