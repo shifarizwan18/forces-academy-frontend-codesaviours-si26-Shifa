@@ -4,7 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery — Forces Academy Faisalabad</title>
+    <title>Gallery — Forces Academy Faisalabad | Campus Life &amp; Events</title>
+
+    <!-- ===== Basic SEO Meta Tags ===== -->
+    <meta name="description" content="Browse photos from Forces Academy Faisalabad — parades, sports events, guest lectures and classroom life. Filter by category and view any photo full-size.">
+    <meta name="keywords" content="Forces Academy gallery, Faisalabad academy photos, cadet parade photos, ISSB prep classroom photos, academy sports events, investiture ceremony photos, campus life gallery">
+    <meta name="author" content="Forces Academy Faisalabad">
+    <link rel="canonical" href="https://forcesacademyfsd.edu.pk/gallery.html">
+
+    <!-- ===== Open Graph / Social Sharing Meta Tags ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gallery — Forces Academy Faisalabad">
+    <meta property="og:description" content="A running photo log of cadet life at Forces Academy Faisalabad — parades, sports week, guest lectures and ISSB prep sessions, all in one gallery.">
+    <meta property="og:image" content="https://forcesacademyfsd.edu.pk/images/logo.png">
+    <meta property="og:url" content="https://forcesacademyfsd.edu.pk/gallery.html">
+    <meta property="og:site_name" content="Forces Academy Faisalabad">
+    <meta property="og:locale" content="en_PK">
+
+    <!-- ===== Twitter Card Meta Tags ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery — Forces Academy Faisalabad">
+    <meta name="twitter:description" content="A running photo log of cadet life at Forces Academy Faisalabad — parades, sports week, guest lectures and ISSB prep sessions, all in one gallery.">
+    <meta name="twitter:image" content="https://forcesacademyfsd.edu.pk/images/logo.png">
+
+    <!-- ===== Favicon (using existing logo) ===== -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -14,6 +39,22 @@
          ki jagah "../css/style.css" karein -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/gallery.css">
+     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+
+    <!-- Apply saved theme before first paint, so there's no flash of the wrong theme.
+         This tiny inline script MUST stay in <head>, before the stylesheets finish
+         loading, so the class is already on <html> by the time CSS paints. -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('fa-theme');
+                var wantsDark = saved ? saved === 'dark'
+                    : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (wantsDark) document.documentElement.classList.add('dark-mode');
+            } catch (e) { /* localStorage unavailable — default to light mode */ }
+        })();
+    </script>
 
     <!-- GLightbox theme override — match site's forest-green / gold palette -->
     <style>
@@ -89,7 +130,7 @@
         <div class="container">
 
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="images/logo.png" alt="Logo" class="logo">
+                <img src="images/logo.png" alt="Forces Academy Faisalabad official logo" class="logo">
                 <div class="logo-text ms-2">
                     <h4>FORCES ACADEMY</h4>
                     <span>FAISALABAD</span>
@@ -112,6 +153,12 @@
                     <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
+
+                <!-- Theme Toggle -->
+                <button type="button" class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="bi bi-moon-stars-fill theme-icon-moon"></i>
+                    <i class="bi bi-sun-fill theme-icon-sun"></i>
+                </button>
 
                 <a href="#" class="portal-btn">
                     <i class="bi bi-mortarboard-fill"></i>
@@ -159,7 +206,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1759746407477-b1d8088fe11a?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Annual Investiture Ceremony">
                             <span class="gl-tag">Events</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1759746407477-b1d8088fe11a?auto=format&fit=crop&w=800&h=533&q=80" alt="Investiture ceremony">
+                            <img src="https://images.unsplash.com/photo-1759746407477-b1d8088fe11a?auto=format&fit=crop&w=800&h=533&q=80" alt="Cadets standing in formation at the annual investiture ceremony, Forces Academy Faisalabad">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Investiture Ceremony</strong><span>Spring Batch</span></span></span>
                         </a>
                     </div>
@@ -168,7 +215,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1660895000335-f18ade1827a1?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Annual Parade Ceremony">
                             <span class="gl-tag">Events</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1660895000335-f18ade1827a1?auto=format&fit=crop&w=800&h=533&q=80" alt="Annual parade ceremony">
+                            <img src="https://images.unsplash.com/photo-1660895000335-f18ade1827a1?auto=format&fit=crop&w=800&h=533&q=80" alt="Cadets marching in disciplined drill formation during the annual parade ceremony">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Annual Parade Ceremony</strong><span>Discipline &amp; Drill Demonstration</span></span></span>
                         </a>
                     </div>
@@ -177,7 +224,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Guest Lecture Series">
                             <span class="gl-tag">Events</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=800&h=533&q=80" alt="Guest lecture">
+                            <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?auto=format&fit=crop&w=800&h=533&q=80" alt="ISSB alumni guest speaker addressing students during the campus lecture series">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Guest Lecture Series</strong><span>ISSB Alumni Talk</span></span></span>
                         </a>
                     </div>
@@ -186,7 +233,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Convocation">
                             <span class="gl-tag">Events</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&h=533&q=80" alt="Convocation">
+                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&h=533&q=80" alt="Graduating cadets celebrating on convocation day at Forces Academy Faisalabad">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Convocation Day</strong><span>Graduating Batch</span></span></span>
                         </a>
                     </div>
@@ -196,7 +243,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1485400031595-976c74cf4e25?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Inter-Batch Football">
                             <span class="gl-tag">Sports</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1485400031595-976c74cf4e25?auto=format&fit=crop&w=800&h=533&q=80" alt="Football match">
+                            <img src="https://images.unsplash.com/photo-1485400031595-976c74cf4e25?auto=format&fit=crop&w=800&h=533&q=80" alt="Students competing in an inter-batch football match during Sports Week">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Inter-Batch Football</strong><span>Sports Week</span></span></span>
                         </a>
                     </div>
@@ -205,7 +252,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Track & Field Trials">
                             <span class="gl-tag">Sports</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?auto=format&fit=crop&w=800&h=533&q=80" alt="Track and field trials">
+                            <img src="https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?auto=format&fit=crop&w=800&h=533&q=80" alt="Cadets running during track and field trials as part of the physical fitness assessment">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Track &amp; Field Trials</strong><span>Physical Assessment</span></span></span>
                         </a>
                     </div>
@@ -214,7 +261,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1521055170349-25f955971658?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Basketball Finals">
                             <span class="gl-tag">Sports</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1521055170349-25f955971658?auto=format&fit=crop&w=800&h=533&q=80" alt="Basketball finals">
+                            <img src="https://images.unsplash.com/photo-1521055170349-25f955971658?auto=format&fit=crop&w=800&h=533&q=80" alt="Players in action during the inter-house basketball championship finals">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Basketball Finals</strong><span>Inter-House Championship</span></span></span>
                         </a>
                     </div>
@@ -223,7 +270,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1525088068454-ff2c453e50e9?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Girls' Soccer Match">
                             <span class="gl-tag">Sports</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1525088068454-ff2c453e50e9?auto=format&fit=crop&w=800&h=533&q=80" alt="Girls soccer match">
+                            <img src="https://images.unsplash.com/photo-1525088068454-ff2c453e50e9?auto=format&fit=crop&w=800&h=533&q=80" alt="Female students playing soccer during the Annual Sports Gala">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Girls' Soccer Match</strong><span>Annual Sports Gala</span></span></span>
                         </a>
                     </div>
@@ -233,7 +280,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1758270704587-43339a801396?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Classroom Session">
                             <span class="gl-tag">Academic</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1758270704587-43339a801396?auto=format&fit=crop&w=800&h=533&q=80" alt="Classroom session">
+                            <img src="https://images.unsplash.com/photo-1758270704587-43339a801396?auto=format&fit=crop&w=800&h=533&q=80" alt="Instructor teaching an ISSB preparation classroom session at Forces Academy">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Classroom Session</strong><span>ISSB Prep Batch</span></span></span>
                         </a>
                     </div>
@@ -242,7 +289,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1758270705290-62b6294dd044?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Group Discussion Practice">
                             <span class="gl-tag">Academic</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1758270705290-62b6294dd044?auto=format&fit=crop&w=800&h=533&q=80" alt="Group discussion">
+                            <img src="https://images.unsplash.com/photo-1758270705290-62b6294dd044?auto=format&fit=crop&w=800&h=533&q=80" alt="Students practicing group discussion techniques for PIQ and GTO preparation">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Group Discussion Practice</strong><span>PIQ &amp; GTO Prep</span></span></span>
                         </a>
                     </div>
@@ -251,7 +298,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1741699427799-3fbb70fce948?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Study Group">
                             <span class="gl-tag">Academic</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1741699427799-3fbb70fce948?auto=format&fit=crop&w=800&h=533&q=80" alt="Study group">
+                            <img src="https://images.unsplash.com/photo-1741699427799-3fbb70fce948?auto=format&fit=crop&w=800&h=533&q=80" alt="Students studying together during a peer learning hour study group">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Study Group</strong><span>Peer Learning Hour</span></span></span>
                         </a>
                     </div>
@@ -260,7 +307,7 @@
                         <a class="gl-frame glightbox" href="https://images.unsplash.com/photo-1758270704286-83476deb3bd1?auto=format&fit=crop&w=1400&h=933&q=80" data-gallery="gl" data-type="image" data-title="Classroom Q&A Session">
                             <span class="gl-tag">Academic</span>
                             <span class="gl-zoom"><i class="bi bi-arrows-fullscreen"></i></span>
-                            <img src="https://images.unsplash.com/photo-1758270704286-83476deb3bd1?auto=format&fit=crop&w=800&h=533&q=80" alt="Classroom Q and A session">
+                            <img src="https://images.unsplash.com/photo-1758270704286-83476deb3bd1?auto=format&fit=crop&w=800&h=533&q=80" alt="Students asking questions during a classroom Q&A session in the final ISSB simulation">
                             <span class="gl-overlay"><span class="gl-cap"><strong>Classroom Q&amp;A Session</strong><span>Final ISSB Simulation</span></span></span>
                         </a>
                     </div>
@@ -365,9 +412,16 @@
 
     </footer>
     <!-- ================= FOOTER END ================= -->
-
+     <button id="backToTop" class="back-to-top" aria-label="Back to top" type="button">
+        <i class="bi bi-arrow-up"></i>
+    </button>
     <!-- Bootstrap JS — is script ke bina toggle/collapse/carousel kaam nahi karega -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Dark Mode Toggle (+ stats counter / back-to-top, both skip themselves
+         automatically on pages that don't have those elements) -->
+    <script src="js/main.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {
