@@ -1,14 +1,15 @@
 /* DARK MODE — Forces Academy Faisalabad. Load AFTER style.css & home.css. Scoped under html.dark-mode so light mode stays untouched.
-   Strategy: redefine neutral "surface" tokens (--dm-*) and reuse them wherever light mode used #fff/var(--cream). Brand green/gold accents same in both modes. */
+   Strategy: redefine neutral "surface" tokens (--dm-*) and reuse them wherever light mode used #fff/var(--cream). Brand green/gold accents stay same in both modes. */
 
 :root{ --dm-bg:#0e1512; --dm-surface:#16211c; --dm-surface-2:#1c2921; --dm-border:rgba(255,213,79,.16); --dm-text:#eef1ec; --dm-text-muted:rgba(238,241,236,.68); --dm-text-dim:rgba(238,241,236,.5); }
 
-/* Crossfade on theme switch. EXCLUDED here: .ad-fee-table-wrap, .ad-step-item, .ad-doc-list .list-group-item, .fa-stat-card — they have their own scroll-in reveal (opacity/transform) transition defined in home.css; `transition` is a shorthand, so listing them here would silently wipe that reveal. They get a combined rule below instead. */
+/* Crossfade on theme switch. EXCLUDED here: .ad-fee-table-wrap, .ad-step-item, .ad-doc-list .list-group-item, .fa-stat-card, .fa-announce-card — they have their own scroll-in reveal (opacity/transform) transition defined in home.css; `transition` is a shorthand, so listing them here would silently wipe that reveal. They get a combined rule below instead. */
 body,#mainNav,.fa-footer,.ab-record,.ab-why-card,.ab-mv-card,.crs-card,.crs-track-card,.ad-elig-card,.fa-testi-card,.rs-result-card,.rs-filter-bar,.rs-table-wrap,.rs-note{ transition:background-color .35s ease,color .35s ease,border-color .35s ease; }
 
 /* Reveal-bearing elements: combine each element's own scroll-in reveal transition with the dark-mode color-swap transition so neither overwrites the other. */
 .ad-fee-table-wrap,.ad-step-item,.ad-doc-list .list-group-item{ transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1),background-color .35s ease,color .35s ease,border-color .35s ease; }
 .fa-stat-card{ transition:opacity .6s ease,transform .6s ease,background-color .35s ease,color .35s ease,border-color .35s ease; }
+.fa-announce-card{ transition:opacity .85s ease,transform .85s ease,background-color .35s ease,color .35s ease,border-color .35s ease,box-shadow .3s ease; }
 
 /* THEME TOGGLE BUTTON */
 .theme-toggle-btn{ display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; border:1.5px solid rgba(255,213,79,.4); background:rgba(255,213,79,.08); color:var(--gold); font-size:17px; margin-left:18px; cursor:pointer; transition:background .3s ease,transform .3s ease,border-color .3s ease; }
@@ -47,6 +48,20 @@ html.dark-mode .fa-stat-number{ color:var(--dm-text); }
 html.dark-mode .fa-testi-text{ color:var(--dm-text-muted); }
 html.dark-mode .fa-testi-info h5{ color:var(--dm-text); }
 html.dark-mode .fa-testi-info span{ color:var(--khaki); }
+
+/* Announcements — reuses the same "surface card on dark bg" pattern as stats/testimonials */
+html.dark-mode .fa-announcements{ background:var(--dm-bg); }
+html.dark-mode .fa-announce-head .fa-stats-eyebrow{ color:var(--gold); background:rgba(255,213,79,.1); border-color:rgba(255,213,79,.3); }
+html.dark-mode .fa-announce-head h2{ color:var(--dm-text); }
+html.dark-mode .fa-announce-head h2 em{ color:var(--gold); }
+html.dark-mode .fa-announce-head p{ color:var(--dm-text-muted); }
+html.dark-mode .fa-announce-card{ background:var(--dm-surface); border:1px solid var(--dm-border); box-shadow:0 12px 28px rgba(0,0,0,.35); }
+html.dark-mode .fa-announce-card h3{ color:var(--dm-text); }
+html.dark-mode .fa-announce-card p{ color:var(--dm-text-muted); }
+html.dark-mode .fa-announce-date{ color:var(--dm-text-dim); }
+html.dark-mode .fa-announce-tag{ color:#0a1210; }
+html.dark-mode .fa-announce-link{ color:var(--gold); }
+html.dark-mode .fa-announce-link:hover{ color:#fff3c8; }
 
 /* FOOTER */
 html.dark-mode .fa-footer{ background:#0a1210; }
@@ -237,5 +252,5 @@ html.dark-mode .ct-phone-dot.active{ background:var(--gold); }
 
 /* Respect prefers-reduced-motion for our own added transitions too */
 @media(prefers-reduced-motion:reduce){
-  body,#mainNav,.fa-footer,.ab-record,.ab-why-card,.ab-mv-card,.crs-card,.crs-track-card,.ad-step-item,.ad-doc-list .list-group-item,.ad-elig-card,.ad-fee-table-wrap,.fa-stat-card,.fa-testi-card,.rs-result-card,.rs-filter-bar,.rs-table-wrap,.rs-note,.theme-toggle-btn{ transition:none !important; }
+  body,#mainNav,.fa-footer,.ab-record,.ab-why-card,.ab-mv-card,.crs-card,.crs-track-card,.ad-step-item,.ad-doc-list .list-group-item,.ad-elig-card,.ad-fee-table-wrap,.fa-stat-card,.fa-testi-card,.fa-announce-card,.rs-result-card,.rs-filter-bar,.rs-table-wrap,.rs-note,.theme-toggle-btn{ transition:none !important; }
 }
