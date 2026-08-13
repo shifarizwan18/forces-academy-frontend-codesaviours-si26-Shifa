@@ -95,6 +95,54 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }, 4000);
     }
+    var announceSection = document.querySelector('.fa-announcements');
+
+    if (announceSection) {
+
+        var announceCards = announceSection.querySelectorAll('.fa-announce-card');
+        var announceGrid = announceSection.querySelector('.fa-announce-grid'); // observe the grid, not the whole section
+        var announceHasAnimated = false;
+
+        var revealAnnounceCards = function () {
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                    announceCards.forEach(function (card) {
+                        card.classList.add('in-view');
+                    });
+                });
+            });
+        };
+
+        var runAnnounceReveal = function () {
+            if (announceHasAnimated) return;
+            announceHasAnimated = true;
+            revealAnnounceCards();
+        };
+
+        if ('IntersectionObserver' in window) {
+            var announceObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        runAnnounceReveal();
+                        announceObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2,                 // grid ka kam se kam 20% dikhna chahiye
+                rootMargin: '0px 0px -15% 0px'  // viewport ke bottom 15% ko ignore karo, taake trigger thoda deferred ho
+            });
+            announceObserver.observe(announceGrid || announceSection);
+        } else {
+            // No IntersectionObserver support — just show everything now.
+            runAnnounceReveal();
+        }
+        setTimeout(function () {
+            if (!announceHasAnimated) {
+                revealAnnounceCards();
+                announceHasAnimated = true;
+            }
+        }, 4000);
+    }
     var backToTopBtn = document.getElementById('backToTop');
 
     if (backToTopBtn) {
