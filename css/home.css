@@ -41,6 +41,59 @@
     .fa-stat-card{transition:none !important;opacity:1 !important;transform:none !important;}
 }
 
+/* ANNOUNCEMENTS SECTION — "Latest Announcements" */
+.fa-announcements{position:relative;background:var(--cream);padding:90px 0 100px;overflow:hidden;}
+.fa-announcements .container{position:relative;z-index:1;}
+
+.fa-announce-head{text-align:center;max-width:640px;margin:0 auto 56px;}
+.fa-announce-head h2{font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.5px;font-size:clamp(1.7rem,4vw,2.4rem);color:var(--forest);margin:18px 0 12px;}
+.fa-announce-head h2 em{font-style:normal;color:var(--forest-dark);}
+.fa-announce-head p{font-weight:300;font-size:.98rem;color:#5c5a4d;}
+.fa-announce-head .fa-stats-eyebrow{color:var(--forest);background:rgba(11,93,59,.08);border-color:rgba(11,93,59,.3);}
+
+.fa-announce-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+
+.fa-announce-card{position:relative;background:#fff;border-radius:10px;padding:32px 26px 28px;box-shadow:0 15px 35px rgba(11,93,59,.1);border:1px solid rgba(11,93,59,.08);display:flex;flex-direction:column;
+    /* Hidden until scrolled into view; revealed by main.js via IntersectionObserver (same pattern as .fa-stat-card).
+       noscript-safe: index.html's <noscript> block forces this visible if JS never runs. */
+    opacity:0;transform:translateY(28px);transition:opacity .85s ease, transform .85s ease, box-shadow .3s ease;}
+.fa-announce-card.in-view{opacity:1;transform:translateY(0);}
+.fa-announce-card:nth-child(1).in-view{transition-delay:0s;}
+.fa-announce-card:nth-child(2).in-view{transition-delay:.16s;}
+.fa-announce-card:nth-child(3).in-view{transition-delay:.32s;}
+.fa-announce-card:hover{transform:translateY(-6px);box-shadow:0 22px 45px rgba(11,93,59,.16);}
+.fa-announce-card.in-view:hover{transform:translateY(-6px);}
+
+.fa-announce-tag{display:inline-block;align-self:flex-start;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--forest-dark);background:var(--gold);border-radius:50px;padding:5px 14px;margin-bottom:16px;}
+
+.fa-announce-date{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#8a8365;letter-spacing:.3px;margin-bottom:10px;}
+
+.fa-announce-card h3{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.15rem;color:var(--forest);line-height:1.35;margin-bottom:12px;}
+
+.fa-announce-card p{font-size:.92rem;line-height:1.65;color:#5c5a4d;font-weight:300;margin-bottom:20px;flex-grow:1;}
+
+.fa-announce-link{display:inline-flex;align-items:center;gap:6px;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--forest);text-decoration:none;transition:gap .25s ease, color .25s ease;}
+.fa-announce-link i{font-size:14px;transition:transform .25s ease;}
+.fa-announce-link:hover{color:var(--forest-dark);gap:10px;}
+.fa-announce-link:hover i{transform:translateX(3px);}
+
+@media(max-width:991px){
+    .fa-announcements{padding:70px 0 76px;}
+    .fa-announce-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+    .fa-announce-head{margin-bottom:44px;}
+    .fa-announce-grid .fa-announce-card:nth-child(3){grid-column:1 / -1;max-width:calc(50% - 10px);margin:0 auto;}
+}
+@media(max-width:575px){
+    .fa-announcements{padding:56px 0 64px;}
+    .fa-announce-grid{grid-template-columns:1fr;gap:18px;}
+    .fa-announce-card{padding:28px 22px 24px;}
+    .fa-announce-head{margin-bottom:36px;padding:0 1rem;}
+    .fa-announce-grid .fa-announce-card:nth-child(3){max-width:none;}
+}
+@media(prefers-reduced-motion: reduce){
+    .fa-announce-card{transition:none !important;opacity:1 !important;transform:none !important;}
+}
+
 /* TESTIMONIALS SECTION — "Voices From The Ranks" */
 .fa-testimonials{position:relative;background:var(--forest);padding:90px 0 100px;overflow:hidden;}
 .fa-testimonials::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,213,79,.08) 1px, transparent 1px);background-size:26px 26px;pointer-events:none;}
