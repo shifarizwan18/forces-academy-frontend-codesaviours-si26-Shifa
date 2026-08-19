@@ -1,4 +1,5 @@
 # Forces Academy Faisalabad – Frontend
+
 A fully responsive, pure front-end website for **Forces Academy, Faisalabad**, built as part of the Code Saviours SI-26 program. The site consists of 7 pages covering everything a prospective student needs — from academy information and courses to admissions, results, and a photo gallery.
 
 🔗 **Live Site:** https://shifarizwan18.github.io/forces-academy-frontend-codesaviours-si26-Shifa/
@@ -7,9 +8,9 @@ A fully responsive, pure front-end website for **Forces Academy, Faisalabad**, b
 
 ## 📸 Screenshots
 
-| Home | Courses | Results |
-|------|---------|---------|
-| ![Home](./images/home.png) | ![Courses](./images/courses.png) | ![Results](./images/results.png) |
+| Home | Courses | Results | Contact |
+|------|---------|---------|---------|
+| ![Home](./images/home.png) | ![Courses](./images/courses.png) | ![Results](./images/results.png) | ![Contact](./images/contact.png) |
 
 ---
 
@@ -36,6 +37,26 @@ A fully responsive, pure front-end website for **Forces Academy, Faisalabad**, b
 - **Contact page** — contact form and academy location/contact details for inquiries
 - **Clean, semantic HTML5** — accessible, well-structured markup throughout
 - **Cross-browser compatibility** — consistent rendering across Chrome, Firefox, and Edge
+
+---
+
+## 🚀 How to Run Locally
+
+Since this is a static front-end project, there's no build process or dependency installation required — just clone and open.
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/shifarizwan18/forces-academy-frontend-codesaviours-si26-Shifa.git
+   ```
+2. **Move into the project directory**
+   ```bash
+   cd forces-academy-frontend-codesaviours-si26-Shifa
+   ```
+3. **Open the site**
+   - Double-click `index.html` to open it directly in your browser, **or**
+   - Use **VS Code Live Server** (recommended): install the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extension → right-click `index.html` → **Open with Live Server**
+
+That's it — no environment variables, API keys, or package installs are needed.
 
 ---
 
